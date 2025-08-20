@@ -8,6 +8,7 @@ export const Certifications = () => {
       title: "Career Essentials in Cybersecurity",
       issuer: "Microsoft & LinkedIn",
       date: "Apr 09, 2025",
+      credential: "2f6ed1dbfa510b5d75b6ea1514d20d407e70c335c8b346290b5f18791dbc8514",
       type: "Professional",
       color: "text-primary"
     },
@@ -32,6 +33,14 @@ export const Certifications = () => {
       credential: "THM-AW3FPSEPC",
       type: "Platform",
       color: "text-primary"
+    },
+    {
+      title: "TryHackMe Advent of Cyber 2024",
+      issuer: "TryHackMe",
+      date: "Jul 25, 2025",
+      credential: "THM-AW3FPS5EPC",
+      type: "Achievement",
+      color: "text-accent"
     },
     {
       title: "AI for Cybersecurity & Bug Bounty Hunting",
@@ -100,7 +109,7 @@ export const Certifications = () => {
         {/* Stats */}
         <div className="mt-16 grid md:grid-cols-3 gap-8 text-center">
           <div className="terminal-border p-6 rounded-lg">
-            <div className="text-3xl font-cyber font-bold text-primary mb-2">5</div>
+            <div className="text-3xl font-cyber font-bold text-primary mb-2">6</div>
             <div className="text-muted-foreground">Certifications Earned</div>
           </div>
           <div className="terminal-border p-6 rounded-lg">
