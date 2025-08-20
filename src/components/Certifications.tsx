@@ -37,6 +37,7 @@ export const Certifications = () => {
       title: "AI for Cybersecurity & Bug Bounty Hunting",
       issuer: "Udemy",
       date: "Jul 14, 2025",
+      credential: "UC-18cdf247-7430-4ea9-807c-1d6ac8af2667",
       type: "Course",
       color: "text-secondary"
     }
