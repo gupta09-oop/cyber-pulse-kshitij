@@ -1,0 +1,117 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Award, Calendar, ExternalLink } from "lucide-react";
+
+export const Certifications = () => {
+  const certifications = [
+    {
+      title: "Career Essentials in Cybersecurity",
+      issuer: "Microsoft & LinkedIn",
+      date: "Apr 2025",
+      type: "Professional",
+      color: "text-primary"
+    },
+    {
+      title: "Cybersecurity Analyst Job Simulation",
+      issuer: "Tata Forage",
+      date: "Feb 2025",
+      type: "Simulation",
+      color: "text-secondary"
+    },
+    {
+      title: "Cyber Job Simulation",
+      issuer: "Deloitte Forage",
+      date: "Jun 2025",
+      type: "Simulation",
+      color: "text-accent"
+    },
+    {
+      title: "TryHackMe Certificate",
+      issuer: "TryHackMe",
+      date: "Jul 2025",
+      credential: "THM-AW3FP5EFPC",
+      type: "Platform",
+      color: "text-primary"
+    },
+    {
+      title: "AI for Cybersecurity & Bug Bounty Hunting",
+      issuer: "Udemy",
+      date: "Jul 2025",
+      type: "Course",
+      color: "text-secondary"
+    }
+  ];
+
+  return (
+    <section id="certifications" className="py-20 px-4 bg-muted/5">
+      <div className="max-w-6xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="section-header text-4xl md:text-5xl font-cyber font-bold mb-6">
+            Certifications
+          </h2>
+          <div className="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {certifications.map((cert, index) => (
+            <Card key={index} className="project-card">
+              <CardContent className="p-6">
+                <div className="flex items-start justify-between mb-4">
+                  <Award className={`${cert.color} h-8 w-8 flex-shrink-0`} />
+                  <Badge 
+                    variant="outline" 
+                    className={`${cert.color} border-current text-xs`}
+                  >
+                    {cert.type}
+                  </Badge>
+                </div>
+
+                <h3 className={`font-cyber text-lg font-bold ${cert.color} mb-2 leading-tight`}>
+                  {cert.title}
+                </h3>
+
+                <p className="text-muted-foreground font-mono text-sm mb-3">
+                  {cert.issuer}
+                </p>
+
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-muted-foreground text-sm">
+                    <Calendar className="mr-1 h-4 w-4" />
+                    {cert.date}
+                  </div>
+                  {cert.credential && (
+                    <ExternalLink className="h-4 w-4 text-muted-foreground" />
+                  )}
+                </div>
+
+                {cert.credential && (
+                  <div className="mt-3 p-2 terminal-border rounded text-center">
+                    <p className="text-xs text-muted-foreground mb-1">Credential ID</p>
+                    <p className="font-mono text-sm text-foreground">{cert.credential}</p>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Stats */}
+        <div className="mt-16 grid md:grid-cols-3 gap-8 text-center">
+          <div className="terminal-border p-6 rounded-lg">
+            <div className="text-3xl font-cyber font-bold text-primary mb-2">5</div>
+            <div className="text-muted-foreground">Certifications Earned</div>
+          </div>
+          <div className="terminal-border p-6 rounded-lg">
+            <div className="text-3xl font-cyber font-bold text-secondary mb-2">2025</div>
+            <div className="text-muted-foreground">Active Learning Year</div>
+          </div>
+          <div className="terminal-border p-6 rounded-lg">
+            <div className="text-3xl font-cyber font-bold text-accent mb-2">∞</div>
+            <div className="text-muted-foreground">Continuous Learning</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
