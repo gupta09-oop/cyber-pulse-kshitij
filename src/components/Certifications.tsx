@@ -1,8 +1,12 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Award, Calendar, ExternalLink } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Award, Calendar, ExternalLink, Eye } from "lucide-react";
+import { useState } from "react";
 
 export const Certifications = () => {
+  const [selectedCert, setSelectedCert] = useState<any>(null);
+
   const certifications = [
     {
       title: "Career Essentials in Cybersecurity",
@@ -10,21 +14,24 @@ export const Certifications = () => {
       date: "Apr 09, 2025",
       credential: "2f6ed1dbfa510b5d75b6ea1514d20d407e70c335c8b346290b5f18791dbc8514",
       type: "Professional",
-      color: "text-primary"
+      color: "text-primary",
+      image: "/lovable-uploads/464dfb19-fc57-42ab-bdb4-9d5762e4988b.png"
     },
     {
       title: "Cybersecurity Analyst Job Simulation",
       issuer: "Tata Forage",
       date: "Feb 15, 2025",
       type: "Simulation",
-      color: "text-secondary"
+      color: "text-secondary",
+      image: "/lovable-uploads/09236005-af4d-4c89-a0ad-3240b07af8d0.png"
     },
     {
       title: "Cyber Job Simulation",
       issuer: "Deloitte Forage",
       date: "Jun 17, 2025",
       type: "Simulation",
-      color: "text-accent"
+      color: "text-accent",
+      image: "/lovable-uploads/df256736-1337-45c3-a6ce-2ae9c2110fde.png"
     },
     {
       title: "TryHackMe Certificate",
@@ -40,7 +47,8 @@ export const Certifications = () => {
       date: "Jul 25, 2025",
       credential: "THM-AW3FPS5EPC",
       type: "Achievement",
-      color: "text-accent"
+      color: "text-accent",
+      image: "/lovable-uploads/939e9026-d747-407f-af32-55807e9beb61.png"
     },
     {
       title: "AI for Cybersecurity & Bug Bounty Hunting",
@@ -48,7 +56,8 @@ export const Certifications = () => {
       date: "Jul 14, 2025",
       credential: "UC-18cdf247-7430-4ea9-807c-1d6ac8af2667",
       type: "Course",
-      color: "text-secondary"
+      color: "text-secondary",
+      image: "/lovable-uploads/377293a3-d440-48ee-93d5-94b782f5b615.png"
     }
   ];
 
@@ -85,7 +94,7 @@ export const Certifications = () => {
                   {cert.issuer}
                 </p>
 
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center text-muted-foreground text-sm">
                     <Calendar className="mr-1 h-4 w-4" />
                     {cert.date}
@@ -96,10 +105,36 @@ export const Certifications = () => {
                 </div>
 
                 {cert.credential && (
-                  <div className="mt-3 p-2 terminal-border rounded text-center">
+                  <div className="mb-3 p-2 terminal-border rounded text-center">
                     <p className="text-xs text-muted-foreground mb-1">Credential ID</p>
                     <p className="font-mono text-sm text-foreground">{cert.credential}</p>
                   </div>
+                )}
+
+                {/* View Certificate Button */}
+                {cert.image && (
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <button className="w-full mt-3 flex items-center justify-center gap-2 px-4 py-2 terminal-border rounded-lg hover:bg-primary/10 transition-colors">
+                        <Eye className="h-4 w-4" />
+                        <span className="font-mono text-sm">View Certificate</span>
+                      </button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden">
+                      <DialogHeader>
+                        <DialogTitle className="font-cyber text-xl">
+                          {cert.title}
+                        </DialogTitle>
+                      </DialogHeader>
+                      <div className="flex justify-center">
+                        <img 
+                          src={cert.image} 
+                          alt={`${cert.title} Certificate`}
+                          className="max-w-full max-h-[70vh] object-contain rounded-lg"
+                        />
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 )}
               </CardContent>
             </Card>
