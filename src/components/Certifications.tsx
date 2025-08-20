@@ -7,36 +7,36 @@ export const Certifications = () => {
     {
       title: "Career Essentials in Cybersecurity",
       issuer: "Microsoft & LinkedIn",
-      date: "Apr 2025",
+      date: "Apr 09, 2025",
       type: "Professional",
       color: "text-primary"
     },
     {
       title: "Cybersecurity Analyst Job Simulation",
       issuer: "Tata Forage",
-      date: "Feb 2025",
+      date: "Feb 15, 2025",
       type: "Simulation",
       color: "text-secondary"
     },
     {
       title: "Cyber Job Simulation",
       issuer: "Deloitte Forage",
-      date: "Jun 2025",
+      date: "Jun 17, 2025",
       type: "Simulation",
       color: "text-accent"
     },
     {
       title: "TryHackMe Certificate",
       issuer: "TryHackMe",
-      date: "Jul 2025",
-      credential: "THM-AW3FP5EFPC",
+      date: "Jul 25, 2025",
+      credential: "THM-AW3FPSEPC",
       type: "Platform",
       color: "text-primary"
     },
     {
       title: "AI for Cybersecurity & Bug Bounty Hunting",
       issuer: "Udemy",
-      date: "Jul 2025",
+      date: "Jul 14, 2025",
       type: "Course",
       color: "text-secondary"
     }
