@@ -86,8 +86,8 @@ export const Skills = () => {
             <p className="text-muted-foreground">Security Tools Mastered</p>
           </div>
           <div className="text-center">
-            <div className="font-cyber text-3xl font-bold text-accent mb-2">10+</div>
-            <p className="text-muted-foreground">Projects Completed</p>
+            <div className="font-cyber text-3xl font-bold text-accent mb-2">25+</div>
+            <p className="text-muted-foreground">Vulnerability Reports Written</p>
           </div>
           <div className="text-center">
             <div className="font-cyber text-3xl font-bold text-primary mb-2">5+</div>
