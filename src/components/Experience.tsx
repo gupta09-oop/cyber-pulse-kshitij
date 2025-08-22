@@ -8,7 +8,7 @@ export const Experience = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="section-header text-4xl md:text-5xl font-cyber font-bold mb-6">
-            Digital Literacy & Cybersecurity Workshop Intern
+            Experience
           </h2>
           <div className="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
         </div>
