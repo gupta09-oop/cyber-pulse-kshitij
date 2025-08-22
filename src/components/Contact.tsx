@@ -36,8 +36,8 @@ export const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "guptakshitij4723@gmail.com",
-      href: "mailto:guptakshitij4723@gmail.com",
+      value: "kshitijexploit@gmail.com",
+      href: "mailto:kshitijexploit@gmail.com",
       color: "text-primary"
     },
     {
@@ -65,7 +65,7 @@ export const Contact = () => {
       icon: Trophy,
       label: "TryHackMe",
       value: "Profile",
-      href: "https://tryhackme.com/profile",
+      href: "https://tryhackme.com/p/guptakshitij4723",
       color: "text-secondary"
     }
   ];

@@ -41,10 +41,15 @@ export const About = () => {
               
               {/* Resume Button */}
               <div className="pt-6">
-                <Button className="cyber-button w-full sm:w-auto px-8 py-3 font-mono">
-                  <Download className="mr-2 h-5 w-5" />
-                  Download Resume
-                </Button>
+               <Button 
+                 asChild 
+                 className="cyber-button w-full sm:w-auto px-8 py-3 font-mono"
+               >
+                 <a href="/lovable-uploads/fc68869f-79ce-4984-a28e-28b7145095da.png" download="Kshitij_Gupta_Resume.png">
+                   <Download className="mr-2 h-5 w-5" />
+                   Download Resume
+                 </a>
+               </Button>
               </div>
             </CardContent>
           </Card>
