@@ -11,7 +11,7 @@ export const Projects = () => {
       tech: ["Python", "Streamlit", "Ollama", "Local LLM"],
       icon: Brain,
       color: "text-primary",
-      github: "#",
+      github: "https://github.com/gupta09-oop/Ai-powered_phising-analyzer.git",
       demo: null,
       features: [
         "Real-time phishing detection",
