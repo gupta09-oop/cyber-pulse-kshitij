@@ -1,12 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Award, Calendar, ExternalLink, Eye } from "lucide-react";
-import { useState } from "react";
+import { Award, Calendar, ExternalLink } from "lucide-react";
 
 export const Certifications = () => {
-  const [selectedCert, setSelectedCert] = useState<any>(null);
-
   const certifications = [
     {
       title: "Career Essentials in Cybersecurity",
@@ -109,32 +105,6 @@ export const Certifications = () => {
                     <p className="text-xs text-muted-foreground mb-1">Credential ID</p>
                     <p className="font-mono text-sm text-foreground">{cert.credential}</p>
                   </div>
-                )}
-
-                {/* View Certificate Button */}
-                {cert.image && (
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <button className="w-full mt-3 flex items-center justify-center gap-2 px-4 py-2 terminal-border rounded-lg hover:bg-primary/10 transition-colors">
-                        <Eye className="h-4 w-4" />
-                        <span className="font-mono text-sm">View Certificate</span>
-                      </button>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden">
-                      <DialogHeader>
-                        <DialogTitle className="font-cyber text-xl">
-                          {cert.title}
-                        </DialogTitle>
-                      </DialogHeader>
-                      <div className="flex justify-center">
-                        <img 
-                          src={cert.image} 
-                          alt={`${cert.title} Certificate`}
-                          className="max-w-full max-h-[70vh] object-contain rounded-lg"
-                        />
-                      </div>
-                    </DialogContent>
-                  </Dialog>
                 )}
               </CardContent>
             </Card>

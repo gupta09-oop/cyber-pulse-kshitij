@@ -76,7 +76,7 @@ export const Skills = () => {
         </div>
 
         {/* Portfolio Statistics */}
-        <div className="mt-16 grid md:grid-cols-4 gap-8">
+        <div className="mt-16 grid md:grid-cols-3 gap-8">
           <div className="text-center">
             <div className="font-cyber text-3xl font-bold text-primary mb-2">50+</div>
             <p className="text-muted-foreground">CTF Challenges Solved</p>
@@ -86,11 +86,7 @@ export const Skills = () => {
             <p className="text-muted-foreground">Security Tools Mastered</p>
           </div>
           <div className="text-center">
-            <div className="font-cyber text-3xl font-bold text-accent mb-2">25+</div>
-            <p className="text-muted-foreground">Vulnerability Reports Written</p>
-          </div>
-          <div className="text-center">
-            <div className="font-cyber text-3xl font-bold text-primary mb-2">5+</div>
+            <div className="font-cyber text-3xl font-bold text-accent mb-2">5+</div>
             <p className="text-muted-foreground">Certifications Earned</p>
           </div>
         </div>
