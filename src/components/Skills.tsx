@@ -25,7 +25,7 @@ export const Skills = () => {
       title: "Databases",
       icon: Database,
       color: "text-primary",
-      skills: ["MySQL", "DBMS"]
+      skills: ["MySQL"]
     },
     {
       title: "Operating Systems",
