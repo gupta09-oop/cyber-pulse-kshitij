@@ -75,19 +75,23 @@ export const Skills = () => {
           ))}
         </div>
 
-        {/* Skill Level Indicators */}
-        <div className="mt-16 grid md:grid-cols-3 gap-8">
+        {/* Portfolio Statistics */}
+        <div className="mt-16 grid md:grid-cols-4 gap-8">
           <div className="text-center">
-            <div className="font-cyber text-3xl font-bold text-primary mb-2">Advanced</div>
-            <p className="text-muted-foreground">Cybersecurity Fundamentals</p>
+            <div className="font-cyber text-3xl font-bold text-primary mb-2">50+</div>
+            <p className="text-muted-foreground">CTF Challenges Solved</p>
           </div>
           <div className="text-center">
-            <div className="font-cyber text-3xl font-bold text-secondary mb-2">Intermediate</div>
-            <p className="text-muted-foreground">Programming & Development</p>
+            <div className="font-cyber text-3xl font-bold text-secondary mb-2">15+</div>
+            <p className="text-muted-foreground">Security Tools Mastered</p>
           </div>
           <div className="text-center">
-            <div className="font-cyber text-3xl font-bold text-accent mb-2">Learning</div>
-            <p className="text-muted-foreground">AI & Machine Learning</p>
+            <div className="font-cyber text-3xl font-bold text-accent mb-2">10+</div>
+            <p className="text-muted-foreground">Projects Completed</p>
+          </div>
+          <div className="text-center">
+            <div className="font-cyber text-3xl font-bold text-primary mb-2">5+</div>
+            <p className="text-muted-foreground">Certifications Earned</p>
           </div>
         </div>
       </div>
