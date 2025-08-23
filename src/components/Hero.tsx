@@ -45,18 +45,18 @@ export const Hero = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative px-4">
-      {/* Profile Image */}
-      <div className="absolute top-20 right-20 hidden lg:block animate-float">
-        <div className="w-64 h-64 rounded-full overflow-hidden terminal-border">
-          <img 
-            src="/lovable-uploads/6d8fbab6-df0e-4104-8cff-c8c1ff08a385.png" 
-            alt="Kshitij Gupta - Cybersecurity Professional"
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-
       <div className="text-center max-w-4xl mx-auto">
+        {/* Profile Image */}
+        <div className="mb-8 flex justify-center">
+          <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden terminal-border shadow-lg">
+            <img 
+              src="/lovable-uploads/6d8fbab6-df0e-4104-8cff-c8c1ff08a385.png" 
+              alt="Kshitij Gupta - Cybersecurity Professional"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
         {/* Terminal Header */}
         <div className="flex items-center justify-center mb-8">
           <Terminal className="text-primary mr-3 h-8 w-8" />
