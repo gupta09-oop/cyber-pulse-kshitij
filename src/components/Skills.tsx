@@ -37,7 +37,7 @@ export const Skills = () => {
       title: "Soft Skills",
       icon: Users,
       color: "text-accent",
-      skills: ["Problem Solving", "Report Writing", "Teamwork", "Communication", "Training", "Adaptability", "Project Management"]
+      skills: ["Problem-Solving", "Team Collaboration", "Project Management", "Adaptability", "Leadership", "Strategic Thinking"]
     }
   ];
 
