@@ -48,9 +48,9 @@ export const Hero = () => {
       <div className="text-center max-w-4xl mx-auto">
         {/* Profile Image */}
         <div className="mb-8 flex justify-center">
-          <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden terminal-border shadow-lg">
+          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden terminal-border shadow-lg">
             <img 
-              src="/lovable-uploads/9797a4bb-b416-4398-8ba1-1cf0e85f51ce.png" 
+              src="/lovable-uploads/6d8fbab6-df0e-4104-8cff-c8c1ff08a385.png" 
               alt="Kshitij Gupta - Cybersecurity Professional"
               className="w-full h-full object-cover"
             />
