@@ -1,65 +1,7 @@
-import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Mail, Phone, Github, Linkedin, Trophy, MessageSquare } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
-import emailjs from '@emailjs/browser';
+import { Mail, Phone, Github, Linkedin, Trophy } from "lucide-react";
 
 export const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      // EmailJS configuration - Replace these with your actual values
-      const serviceId = 'YOUR_SERVICE_ID';
-      const templateId = 'YOUR_TEMPLATE_ID';
-      const publicKey = 'YOUR_PUBLIC_KEY';
-      
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message,
-        to_email: 'kshitijexploit@gmail.com'
-      };
-
-      await emailjs.send(serviceId, templateId, templateParams, publicKey);
-      
-      toast({
-        title: "Message Sent Successfully!",
-        description: "Thanks for reaching out. I'll get back to you soon!",
-      });
-      setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
-      console.error('EmailJS error:', error);
-      toast({
-        title: "Failed to Send Message",
-        description: "Please try again or contact me directly via email.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   const contactInfo = [
     {
       icon: Mail,
@@ -109,75 +51,7 @@ export const Contact = () => {
           <div className="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <Card className="project-card">
-            <CardContent className="p-8">
-              <div className="flex items-center mb-6">
-                <MessageSquare className="text-primary mr-3 h-6 w-6" />
-                <h3 className="font-cyber text-2xl font-bold text-primary">
-                  Send Message
-                </h3>
-              </div>
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <Label htmlFor="name" className="text-foreground font-mono">
-                    Name
-                  </Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="mt-2 terminal-border bg-background text-foreground"
-                    placeholder="Enter your name"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="email" className="text-foreground font-mono">
-                    Email
-                  </Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="mt-2 terminal-border bg-background text-foreground"
-                    placeholder="Enter your email"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="message" className="text-foreground font-mono">
-                    Message
-                  </Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="mt-2 terminal-border bg-background text-foreground min-h-[120px]"
-                    placeholder="Your message..."
-                    required
-                  />
-                </div>
-
-                <Button 
-                  type="submit" 
-                  className="cyber-button w-full py-3 font-mono"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-
+        <div className="max-w-2xl mx-auto">
           {/* Contact Info */}
           <div className="space-y-6">
             <Card className="project-card">
