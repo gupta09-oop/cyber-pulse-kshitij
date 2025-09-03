@@ -104,7 +104,7 @@ export const Certifications = () => {
                 {cert.credential && (
                   <div className="mb-3 p-2 terminal-border rounded text-center">
                     <p className="text-xs text-muted-foreground mb-1">Credential ID</p>
-                    <p className="font-mono text-sm text-foreground">{cert.credential}</p>
+                    <p className="font-mono text-xs text-foreground break-all leading-tight">{cert.credential}</p>
                   </div>
                 )}
 
