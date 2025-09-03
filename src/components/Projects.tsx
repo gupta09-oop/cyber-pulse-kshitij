@@ -23,17 +23,17 @@ export const Projects = () => {
     {
       title: "CipherHide",
       status: "Completed",
-      description: "Advanced text encryption and decryption tool with multiple cipher algorithms for secure communication",
-      tech: ["HTML", "CSS", "JavaScript", "Cryptography"],
+      description: "CipherHide is a secure web application that enables users to encrypt text and embed it within images using steganography. It offers a sleek, responsive interface for both encryption and decryption workflows. The project demonstrates practical cybersecurity concepts, such as data confidentiality and covert communication, making it ideal for secure messaging.",
+      tech: ["React", "Tailwind CSS", "Cryptography", "Steganography", "Lovable Hosting"],
       icon: Lock,
       color: "text-accent",
       github: "https://github.com/gupta09-oop/Cipherhide-main.git",
       demo: "https://cipherhide-main.vercel.app/",
       features: [
-        "Multiple encryption algorithms",
-        "Secure text hiding",
-        "Easy-to-use interface",
-        "Real-time encryption/decryption"
+        "Text encryption and steganography",
+        "Image-based data hiding",
+        "Responsive web interface",
+        "Secure messaging capabilities"
       ]
     },
     {
