@@ -37,6 +37,22 @@ export const Projects = () => {
       ]
     },
     {
+      title: "WiFi Security: Evil Twin & Deauthentication Simulation (ESP32)",
+      status: "Completed",
+      description: "Simulated WiFi Evil Twin & Deauth attacks in a lab using ESP32, and researched defensive measures.",
+      tech: ["WiFi Security", "ESP32", "Ethical Hacking", "IoT Security"],
+      icon: Shield,
+      color: "text-secondary",
+      github: "https://github.com/gupta09-oop/-WiFi-Security-Evil-Twin-Deauthentication-Simulation-ESP32-.git",
+      demo: null,
+      features: [
+        "Evil Twin attack simulation",
+        "Deauthentication attack testing",
+        "ESP32 IoT security research",
+        "Defensive countermeasures analysis"
+      ]
+    },
+    {
       title: "Password Strength Checker",
       status: "Completed",
       description: "Web-based tool to analyze password security and estimate cracking time with 'Have I Been Pwned?' integration",

@@ -13,13 +13,13 @@ export const Skills = () => {
       title: "Cybersecurity",
       icon: Shield,
       color: "text-secondary",
-      skills: ["Phishing Detection", "CTF Solving", "Recon", "Vulnerability Assessment", "OSINT", "Penetration Testing"]
+      skills: ["Phishing Detection", "CTF Solving", "Recon", "Vulnerability Assessment", "OSINT", "Penetration Testing", "Wireless Penetration Testing", "Evil Twin Simulation"]
     },
     {
       title: "Tools & Platforms",
       icon: Monitor,
       color: "text-accent",
-      skills: ["Wireshark", "Burp Suite", "Nmap", "Metasploit", "Nessus", "Streamlit", "TryHackMe", "Hack The Box", "HackerRank", "EC-Council Labs"]
+      skills: ["Wireshark", "Burp Suite", "Nmap", "Metasploit", "Nessus", "Streamlit", "ESP32", "IoT Security", "TryHackMe", "Hack The Box", "HackerRank", "EC-Council Labs"]
     },
     {
       title: "Databases",
