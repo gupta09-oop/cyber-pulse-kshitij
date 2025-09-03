@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Brain, Shield, Globe } from "lucide-react";
+import { ExternalLink, Github, Brain, Shield, Globe, Lock } from "lucide-react";
 
 export const Projects = () => {
   const projects = [
@@ -18,6 +18,22 @@ export const Projects = () => {
         "Local AI processing",
         "Team collaboration features",
         "Privacy-focused design"
+      ]
+    },
+    {
+      title: "CipherHide",
+      status: "Completed",
+      description: "Advanced text encryption and decryption tool with multiple cipher algorithms for secure communication",
+      tech: ["HTML", "CSS", "JavaScript", "Cryptography"],
+      icon: Lock,
+      color: "text-accent",
+      github: "https://github.com/gupta09-oop/Cipherhide-main.git",
+      demo: "https://cipherhide-main.vercel.app/",
+      features: [
+        "Multiple encryption algorithms",
+        "Secure text hiding",
+        "Easy-to-use interface",
+        "Real-time encryption/decryption"
       ]
     },
     {
