@@ -141,7 +141,7 @@ export const Certifications = () => {
         {/* Stats */}
         <div className="mt-16 grid md:grid-cols-3 gap-8 text-center">
           <div className="terminal-border p-6 rounded-lg">
-            <div className="text-3xl font-cyber font-bold text-primary mb-2">6</div>
+            <div className="text-3xl font-cyber font-bold text-primary mb-2">5</div>
             <div className="text-muted-foreground">Certifications Earned</div>
           </div>
           <div className="terminal-border p-6 rounded-lg">
