@@ -26,17 +26,24 @@ export const About = () => {
               </div>
               
               <p className="text-lg leading-relaxed text-muted-foreground">
-                I am a cybersecurity enthusiast and aspiring web developer currently pursuing 
+                I am a cybersecurity enthusiast and aspiring security analyst, currently pursuing 
                 <span className="text-primary font-semibold"> BCA (Hons.) in Cybersecurity</span> at 
-                Lovely Professional University. With a strong foundation in ethical hacking, network 
-                security, and secure web development, I focus on building tools that protect and 
-                strengthen digital environments.
+                Lovely Professional University. My passion lies in ethical hacking, threat detection, 
+                and building tools that combine offensive research with defensive strategies.
               </p>
               
               <p className="text-lg leading-relaxed text-muted-foreground">
-                I'm passionate about exploring the intersection of cybersecurity and AI to create 
-                smarter, more resilient systems. My journey involves continuous learning through 
-                practical applications, CTF challenges, and real-world security implementations.
+                I've completed projects such as CipherHide (a secure steganography web app) and a 
+                Wi-Fi Security Lab with ESP32 (Evil Twin and Deauthentication attack simulations). 
+                I am also developing PhishX, an AI-powered phishing detection tool designed to identify 
+                malicious links and emails in real time. These hands-on projects highlight my ability 
+                to explore both AI-driven security solutions and wireless network vulnerabilities.
+              </p>
+              
+              <p className="text-lg leading-relaxed text-muted-foreground">
+                Looking ahead, I aim to expand into SOC analysis, penetration testing, and 
+                hardware-based security tools—including my upcoming USB Rubber Ducky built with 
+                Raspberry Pi Pico.
               </p>
               
               {/* Resume Button */}
