@@ -91,6 +91,9 @@ export const Projects = () => {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
+          <div className="terminal-border inline-block p-4 mb-6 bg-background/50 backdrop-blur-sm">
+            <span className="font-mono text-secondary text-sm">root@projects:~$ ls -la /home/kshitij/projects</span>
+          </div>
           <h2 className="section-header text-4xl md:text-5xl font-cyber font-bold mb-6">
             What I'm Building
           </h2>

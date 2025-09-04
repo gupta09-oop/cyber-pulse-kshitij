@@ -75,19 +75,28 @@ export const Skills = () => {
           ))}
         </div>
 
-        {/* Portfolio Statistics */}
+        {/* Terminal Style Statistics */}
         <div className="mt-16 grid md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <div className="font-cyber text-3xl font-bold text-primary mb-2">50+</div>
-            <p className="text-muted-foreground">CTF Challenges Solved</p>
+          <div className="terminal-border p-6 rounded-lg bg-background/50 backdrop-blur-sm">
+            <div className="flex items-center mb-2">
+              <span className="text-secondary text-sm font-mono">root@kshitij:~$</span>
+            </div>
+            <div className="font-cyber text-3xl font-bold text-primary mb-2 animate-fade-in">15+</div>
+            <p className="text-muted-foreground font-mono">CTF_challenges_solved</p>
           </div>
-          <div className="text-center">
-            <div className="font-cyber text-3xl font-bold text-secondary mb-2">20+</div>
-            <p className="text-muted-foreground">Security Tools Mastered</p>
+          <div className="terminal-border p-6 rounded-lg bg-background/50 backdrop-blur-sm">
+            <div className="flex items-center mb-2">
+              <span className="text-secondary text-sm font-mono">root@arsenal:~$</span>
+            </div>
+            <div className="font-cyber text-3xl font-bold text-secondary mb-2 animate-fade-in">20+</div>
+            <p className="text-muted-foreground font-mono">security_tools_mastered</p>
           </div>
-          <div className="text-center">
-            <div className="font-cyber text-3xl font-bold text-accent mb-2">4</div>
-            <p className="text-muted-foreground">Certifications Earned</p>
+          <div className="terminal-border p-6 rounded-lg bg-background/50 backdrop-blur-sm">
+            <div className="flex items-center mb-2">
+              <span className="text-secondary text-sm font-mono">root@certs:~$</span>
+            </div>
+            <div className="font-cyber text-3xl font-bold text-accent mb-2 animate-fade-in">5</div>
+            <p className="text-muted-foreground font-mono">certifications_earned</p>
           </div>
         </div>
       </div>
