@@ -7,37 +7,37 @@ export const Skills = () => {
       title: "Programming Languages",
       icon: Code,
       color: "text-primary",
-      skills: ["Python", "Bash", "SQL", "HTML/CSS", "C", "C++"]
+      skills: ["Python", "Bash", "SQL", "HTML/CSS", "C", "C++", "MicroPython"]
     },
     {
-      title: "Cybersecurity",
+      title: "Cybersecurity Tools",
       icon: Shield,
       color: "text-secondary",
-      skills: ["Phishing Detection", "CTF Solving", "Recon", "Vulnerability Assessment", "OSINT", "Penetration Testing", "Wireless Penetration Testing", "Evil Twin Simulation"]
+      skills: ["Wireshark", "Burp Suite", "Nmap", "Metasploit", "Nessus", "OSINT Framework", "Aircrack-ng"]
     },
     {
-      title: "Tools & Platforms",
-      icon: Monitor,
+      title: "Security Specializations",
+      icon: Shield,
       color: "text-accent",
-      skills: ["Wireshark", "Burp Suite", "Nmap", "Metasploit", "Nessus", "Streamlit", "ESP32", "IoT Security", "TryHackMe", "Hack The Box", "HackerRank", "EC-Council Labs"]
+      skills: ["Penetration Testing", "Wireless Security", "Phishing Detection", "Vulnerability Assessment", "CTF Competitions", "IoT Security"]
     },
     {
-      title: "Databases",
-      icon: Database,
-      color: "text-primary",
-      skills: ["MySQL"]
-    },
-    {
-      title: "Operating Systems",
+      title: "Hardware & IoT",
       icon: Monitor,
-      color: "text-secondary",
-      skills: ["Linux", "Windows"]
+      color: "text-primary",
+      skills: ["ESP32", "Raspberry Pi Pico", "Hardware Hacking", "Wireless Protocols", "Embedded Systems"]
     },
     {
-      title: "Soft Skills",
+      title: "Development & Platforms",
+      icon: Database,
+      color: "text-secondary",
+      skills: ["Streamlit", "React", "MySQL", "Linux", "Windows", "Git"]
+    },
+    {
+      title: "Professional Skills",
       icon: Users,
       color: "text-accent",
-      skills: ["Problem-Solving", "Team Collaboration", "Project Management", "Adaptability", "Leadership", "Strategic Thinking"]
+      skills: ["Problem-Solving", "Team Collaboration", "Project Management", "Technical Documentation", "Ethical Hacking Principles"]
     }
   ];
 
@@ -82,11 +82,11 @@ export const Skills = () => {
             <p className="text-muted-foreground">CTF Challenges Solved</p>
           </div>
           <div className="text-center">
-            <div className="font-cyber text-3xl font-bold text-secondary mb-2">15+</div>
+            <div className="font-cyber text-3xl font-bold text-secondary mb-2">20+</div>
             <p className="text-muted-foreground">Security Tools Mastered</p>
           </div>
           <div className="text-center">
-            <div className="font-cyber text-3xl font-bold text-accent mb-2">5</div>
+            <div className="font-cyber text-3xl font-bold text-accent mb-2">4</div>
             <p className="text-muted-foreground">Certifications Earned</p>
           </div>
         </div>

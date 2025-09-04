@@ -7,7 +7,7 @@ export const Projects = () => {
     {
       title: "PhishX",
       status: "In Development",
-      description: "AI-powered phishing detection tool for small teams using local LLM technology",
+      description: "An AI-powered phishing detection system designed to identify malicious emails and URLs in real-time using local LLM technology. This project focuses on privacy-first security solutions for small teams and organizations. Through this development, I'm gaining expertise in AI integration for cybersecurity applications and exploring the potential of local AI models for threat detection.",
       tech: ["Python", "Streamlit", "Ollama", "Local LLM"],
       icon: Brain,
       color: "text-primary",
@@ -23,8 +23,8 @@ export const Projects = () => {
     {
       title: "CipherHide",
       status: "Completed",
-      description: "CipherHide is a secure web application that enables users to encrypt text and embed it within images using steganography. It offers a sleek, responsive interface for both encryption and decryption workflows. The project demonstrates practical cybersecurity concepts, such as data confidentiality and covert communication, making it ideal for secure messaging.",
-      tech: ["React", "Tailwind CSS", "Cryptography", "Steganography", "Lovable Hosting"],
+      description: "A secure web application that combines text encryption with steganography to hide encrypted messages within images. This project demonstrates practical implementation of cryptographic principles and covert communication techniques. I learned to integrate multiple security layers and developed skills in both frontend development and cryptographic algorithm implementation.",
+      tech: ["React", "Tailwind CSS", "Cryptography", "Steganography", "Vercel"],
       icon: Lock,
       color: "text-accent",
       github: "https://github.com/gupta09-oop/Cipherhide-main.git",
@@ -37,9 +37,9 @@ export const Projects = () => {
       ]
     },
     {
-      title: "WiFi Security: Evil Twin & Deauthentication Simulation (ESP32)",
+      title: "WiFi Security Lab with ESP32",
       status: "Completed",
-      description: "Simulated WiFi Evil Twin & Deauth attacks in a lab using ESP32, and researched defensive measures.",
+      description: "A controlled laboratory simulation of WiFi security attacks including Evil Twin and Deauthentication attacks using ESP32 microcontroller. This project explored wireless network vulnerabilities and defensive countermeasures in a safe environment. I gained hands-on experience with IoT security, wireless penetration testing techniques, and understanding of 802.11 protocol vulnerabilities.",
       tech: ["WiFi Security", "ESP32", "Ethical Hacking", "IoT Security"],
       icon: Shield,
       color: "text-secondary",
@@ -53,9 +53,9 @@ export const Projects = () => {
       ]
     },
     {
-      title: "Password Strength Checker",
+      title: "Password Strength Analyzer",
       status: "Completed",
-      description: "Web-based tool to analyze password security and estimate cracking time with 'Have I Been Pwned?' integration",
+      description: "A web-based security tool that evaluates password strength and checks against known data breaches using the HaveIBeenPwned API. The application provides real-time feedback on password security and estimates cracking time based on various attack methods. This project enhanced my understanding of password security principles and API integration for security applications.",
       tech: ["HTML", "CSS", "JavaScript", "API Integration"],
       icon: Shield,
       color: "text-secondary",
@@ -66,6 +66,22 @@ export const Projects = () => {
         "Cracking time estimation",
         "Breach database checks",
         "Educational security tips"
+      ]
+    },
+    {
+      title: "USB Rubber Ducky with Raspberry Pi Pico",
+      status: "Upcoming",
+      description: "A hardware-based penetration testing tool built using Raspberry Pi Pico to simulate USB Human Interface Device attacks. This project will explore physical security vulnerabilities and automated payload delivery systems. I aim to learn about hardware hacking, embedded systems programming, and the intersection of physical and digital security testing.",
+      tech: ["Raspberry Pi Pico", "MicroPython", "Hardware Hacking", "USB HID"],
+      icon: Shield,
+      color: "text-primary",
+      github: "#",
+      demo: null,
+      features: [
+        "USB HID attack simulation",
+        "Automated payload execution",
+        "Physical security testing",
+        "Hardware penetration testing"
       ]
     }
   ];
