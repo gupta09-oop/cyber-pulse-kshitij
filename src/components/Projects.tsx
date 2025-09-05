@@ -91,34 +91,51 @@ export const Projects = () => {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="terminal-border inline-block p-4 mb-6 bg-background/50 backdrop-blur-sm">
-            <span className="font-mono text-secondary text-sm">root@projects:~$ ls -la /home/kshitij/projects</span>
+          <div className="terminal-border inline-block p-4 mb-6 bg-background/50 backdrop-blur-sm animate-fade-in">
+            <span className="font-mono text-secondary text-sm">root@projects:~$ find . -name "*.project" -type f</span>
           </div>
-          <h2 className="section-header text-4xl md:text-5xl font-cyber font-bold mb-6">
-            What I'm Building
+          <h2 className="section-header text-4xl md:text-5xl font-cyber font-bold mb-6 animate-pulse-glow">
+            Project Repository
           </h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto animate-scan"></div>
+          
+          {/* Terminal Status */}
+          <div className="mt-8 terminal-border inline-block p-3 bg-background/30 backdrop-blur-sm">
+            <div className="font-mono text-xs text-accent">
+              <span className="animate-pulse">🔍 Scanning projects... Found 5 repositories</span>
+            </div>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="project-card">
+            <Card key={index} className="project-card animate-fade-in hover:animate-pulse-glow" style={{ animationDelay: `${index * 0.2}s` }}>
               <CardContent className="p-8">
+                {/* Terminal Header for each project */}
+                <div className="terminal-border p-2 mb-4 bg-background/20">
+                  <div className="font-mono text-xs text-secondary">
+                    <span className="animate-pulse">$ git status {project.title.toLowerCase().replace(/\s+/g, '-')}</span>
+                  </div>
+                </div>
+                
                 {/* Project Header */}
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center">
-                    <project.icon className={`${project.color} mr-3 h-8 w-8`} />
+                    <project.icon className={`${project.color} mr-3 h-8 w-8 animate-pulse`} />
                     <div>
                       <h3 className={`font-cyber text-2xl font-bold ${project.color}`}>
                         {project.title}
                       </h3>
-                      <span className={`inline-block px-3 py-1 rounded-full text-xs font-mono mt-1 ${
-                        project.status === 'Completed' 
-                          ? 'bg-secondary/20 text-secondary' 
-                          : 'bg-accent/20 text-accent'
-                      }`}>
-                        {project.status}
-                      </span>
+                      <div className="flex items-center mt-1">
+                        <div className={`w-2 h-2 rounded-full mr-2 animate-pulse ${
+                          project.status === 'Completed' ? 'bg-green-500' : 
+                          project.status === 'In Development' ? 'bg-yellow-500' : 
+                          'bg-blue-500'
+                        }`}></div>
+                        <span className="font-mono text-xs text-muted-foreground">
+                          status: {project.status.toLowerCase().replace(' ', '_')}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -157,42 +174,52 @@ export const Projects = () => {
                   </div>
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex gap-4">
-                  <Button className="cyber-button flex-1" asChild>
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-4 w-4" />
-                      GitHub
-                    </a>
-                  </Button>
-                  {project.demo && (
-                    <Button 
-                      variant="outline" 
-                      className="cyber-button flex-1 border-secondary text-secondary hover:text-secondary" 
-                      asChild
-                    >
-                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Live Demo
+                {/* Action Buttons with Terminal Style */}
+                <div className="terminal-border p-3 bg-background/20 mb-4">
+                  <div className="font-mono text-xs text-secondary mb-2">
+                    <span className="animate-pulse">$ ./deploy.sh --env=production</span>
+                  </div>
+                  <div className="flex gap-4">
+                    <Button className="cyber-button flex-1 animate-pulse-glow" asChild>
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Github className="mr-2 h-4 w-4" />
+                        Source Code
                       </a>
                     </Button>
-                  )}
+                    {project.demo && (
+                      <Button 
+                        variant="outline" 
+                        className="cyber-button flex-1 border-secondary text-secondary hover:text-secondary" 
+                        asChild
+                      >
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="mr-2 h-4 w-4" />
+                          Execute
+                        </a>
+                      </Button>
+                    )}
+                  </div>
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* More Projects Coming Soon */}
+        {/* More Projects Coming Soon with Terminal Animation */}
         <div className="text-center mt-12">
-          <Card className="project-card inline-block">
+          <Card className="project-card inline-block animate-fade-in animate-pulse-glow">
             <CardContent className="p-8">
-              <Globe className="text-accent mx-auto mb-4 h-12 w-12" />
+              <div className="terminal-border p-3 mb-4 bg-background/20">
+                <div className="font-mono text-xs text-secondary">
+                  <span className="animate-pulse">$ while true; do echo "building_next_project..."; sleep 1; done</span>
+                </div>
+              </div>
+              <Globe className="text-accent mx-auto mb-4 h-12 w-12 animate-float" />
               <h3 className="font-cyber text-xl font-bold text-accent mb-2">
-                More Projects Coming Soon
+                queue.size() &gt; 0
               </h3>
-              <p className="text-muted-foreground">
-                Currently working on additional cybersecurity tools and applications
+              <p className="text-muted-foreground font-mono">
+                // More security tools compiling in background...
               </p>
             </CardContent>
           </Card>
