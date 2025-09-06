@@ -95,7 +95,7 @@ export const Skills = () => {
             <div className="flex items-center mb-2">
               <span className="text-secondary text-sm font-mono">root@certs:~$</span>
             </div>
-            <div className="font-cyber text-3xl font-bold text-accent mb-2 animate-fade-in">5</div>
+            <div className="font-cyber text-3xl font-bold text-accent mb-2 animate-fade-in">6</div>
             <p className="text-muted-foreground font-mono">certifications_earned</p>
           </div>
         </div>
