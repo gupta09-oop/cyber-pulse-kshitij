@@ -44,40 +44,23 @@ export const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative px-4 overflow-hidden">
-      {/* Matrix Background Animation */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="cyber-grid animate-scan"></div>
-      </div>
-      
-      <div className="text-center max-w-4xl mx-auto relative z-10">
-        {/* Terminal Boot Sequence */}
-        <div className="terminal-border p-4 mb-8 bg-background/50 backdrop-blur-sm animate-fade-in">
-          <div className="font-mono text-xs text-secondary space-y-1">
-            <div className="animate-pulse">$ sudo systemctl start cybersec-analyst.service</div>
-            <div className="animate-pulse" style={{ animationDelay: '0.5s' }}>Loading security modules... ✓</div>
-            <div className="animate-pulse" style={{ animationDelay: '1s' }}>Initializing threat detection... ✓</div>
-            <div className="animate-pulse" style={{ animationDelay: '1.5s' }}>Welcome, Kshitij Gupta</div>
-          </div>
-        </div>
-
+    <section className="min-h-screen flex items-center justify-center relative px-4">
+      <div className="text-center max-w-4xl mx-auto">
         {/* Profile Image */}
         <div className="mb-8 flex justify-center">
-          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden terminal-border shadow-lg animate-float">
+          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden terminal-border shadow-lg">
             <img 
               src="/lovable-uploads/6d8fbab6-df0e-4104-8cff-c8c1ff08a385.png" 
               alt="Kshitij Gupta - Cybersecurity Professional"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-primary/20 animate-pulse-glow rounded-full"></div>
           </div>
         </div>
 
         {/* Terminal Header */}
         <div className="flex items-center justify-center mb-8">
-          <Terminal className="text-primary mr-3 h-8 w-8 animate-pulse" />
-          <span className="font-mono text-primary text-lg typewriter">kshitij@cyberspace:~$</span>
-          <span className="animate-pulse ml-2">▋</span>
+          <Terminal className="text-primary mr-3 h-8 w-8" />
+          <span className="font-mono text-primary text-lg">kshitij@cyberspace:~$</span>
         </div>
 
         {/* Main Heading */}
@@ -106,40 +89,26 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Terminal Command Simulation */}
-        <div className="terminal-border p-4 mb-8 bg-background/50 backdrop-blur-sm">
-          <div className="font-mono text-sm text-left">
-            <div className="text-secondary">root@portfolio:~$ ./initialize_portfolio.sh</div>
-            <div className="text-primary animate-pulse">Scanning for vulnerabilities... 🔍</div>
-            <div className="text-accent">Found: Exceptional cybersecurity skills ✓</div>
-          </div>
-        </div>
-
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <Button 
-            className="cyber-button px-8 py-4 text-lg font-mono animate-pulse-glow"
+            className="cyber-button px-8 py-4 text-lg font-mono"
             onClick={() => scrollToSection('projects')}
           >
-            <Terminal className="mr-2 h-5 w-5" />
-            ./view_projects.sh
+            View My Work
           </Button>
           <Button 
             variant="outline" 
             className="cyber-button px-8 py-4 text-lg font-mono border-secondary text-secondary hover:text-secondary"
             onClick={() => scrollToSection('about')}
           >
-            <Shield className="mr-2 h-5 w-5" />
-            nmap -sV localhost →
+            Start Scanning →
           </Button>
         </div>
 
-        {/* Scroll Indicator with scanning effect */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-          <div className="flex flex-col items-center animate-bounce">
-            <div className="font-mono text-xs text-secondary mb-2">scroll_down.sh</div>
-            <ArrowDown className="text-primary h-6 w-6 animate-pulse" />
-          </div>
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ArrowDown className="text-primary h-6 w-6" />
         </div>
       </div>
     </section>

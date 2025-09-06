@@ -1,36 +1,27 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Download, GraduationCap, User, Terminal } from "lucide-react";
+import { Download, GraduationCap, User } from "lucide-react";
 
 export const About = () => {
   return (
     <section id="about" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        {/* Section Header with Terminal */}
+        {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="terminal-border inline-block p-4 mb-6 bg-background/50 backdrop-blur-sm">
-            <span className="font-mono text-secondary text-sm">root@about:~$ whoami && cat /etc/profile</span>
-          </div>
-          <h2 className="section-header text-4xl md:text-5xl font-cyber font-bold mb-6 animate-pulse-glow">
-            System Profile
+          <h2 className="section-header text-4xl md:text-5xl font-cyber font-bold mb-6">
+            Who am I
           </h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto animate-scan"></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Bio Section */}
-          <Card className="project-card p-8 animate-fade-in">
+          <Card className="project-card p-8">
             <CardContent className="space-y-6 p-0">
-              <div className="terminal-border p-3 mb-6 bg-background/30">
-                <div className="flex items-center">
-                  <User className="text-primary mr-3 h-6 w-6 animate-pulse" />
-                  <span className="font-mono text-sm text-secondary">$ cat /home/kshitij/bio.txt</span>
-                </div>
-              </div>
               <div className="flex items-center mb-6">
-                <Terminal className="text-primary mr-3 h-6 w-6" />
+                <User className="text-primary mr-3 h-6 w-6" />
                 <h3 className="font-cyber text-2xl font-bold text-primary">
-                  User Profile
+                  About Me
                 </h3>
               </div>
               
@@ -71,62 +62,54 @@ export const About = () => {
           </Card>
 
           {/* Education Section */}
-          <Card className="project-card p-8 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <Card className="project-card p-8">
             <CardContent className="space-y-6 p-0">
-              <div className="terminal-border p-3 mb-6 bg-background/30">
-                <div className="flex items-center">
-                  <GraduationCap className="text-secondary mr-3 h-6 w-6 animate-pulse" />
-                  <span className="font-mono text-sm text-secondary">$ ls -la /home/kshitij/education/</span>
-                </div>
-              </div>
               <div className="flex items-center mb-6">
-                <Terminal className="text-secondary mr-3 h-6 w-6" />
+                <GraduationCap className="text-secondary mr-3 h-6 w-6" />
                 <h3 className="font-cyber text-2xl font-bold text-secondary">
-                  Academic Records
+                  Education
                 </h3>
               </div>
               
               <div className="space-y-4">
-                <div className="terminal-border p-6 rounded-lg bg-background/50 backdrop-blur-sm animate-pulse-glow">
-                  <div className="font-mono text-xs text-secondary mb-3">
-                    <span className="animate-pulse">$ sudo cat /etc/academic-records</span>
-                  </div>
-                  <h4 className="font-cyber text-xl font-bold text-primary mb-2 animate-fade-in">
+                <div className="terminal-border p-6 rounded-lg">
+                  <h4 className="font-cyber text-xl font-bold text-primary mb-2">
                     BCA (Hons.) in Cybersecurity
                   </h4>
                   <p className="text-accent font-mono mb-2">
-                    📍 Lovely Professional University
+                    Lovely Professional University
                   </p>
                   <p className="text-muted-foreground mb-2">
-                    🎯 Expected 2027
+                    Expected 2027
                   </p>
-                  <div className="grid grid-cols-2 gap-4 mt-4">
-                    <div className="terminal-border p-3 rounded bg-background/30">
-                      <div className="text-xs text-muted-foreground mb-1">CGPA</div>
-                      <div className="font-mono text-secondary font-bold text-lg animate-pulse">7.52</div>
-                    </div>
-                    <div className="terminal-border p-3 rounded bg-background/30">
-                      <div className="text-xs text-muted-foreground mb-1">SEMESTER</div>
-                      <div className="font-mono text-primary text-lg">Second</div>
-                    </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">
+                      Current CGPA:
+                    </span>
+                    <span className="font-mono text-secondary font-bold">
+                      7.52
+                    </span>
                   </div>
-                  <div className="mt-4 font-mono text-xs text-accent">
-                    <span className="animate-pulse">Status: Active Learning Mode 🔴</span>
+                  <div className="flex items-center justify-between mt-1">
+                    <span className="text-sm text-muted-foreground">
+                      Semester:
+                    </span>
+                    <span className="font-mono text-primary">
+                      Second
+                    </span>
                   </div>
                 </div>
               </div>
               
-              {/* Academic Highlights with Terminal Stats */}
+              {/* Academic Highlights */}
               <div className="grid grid-cols-2 gap-4 mt-6">
-                <div className="text-center p-4 terminal-border rounded-lg bg-background/50 backdrop-blur-sm animate-fade-in">
-                  <div className="font-mono text-xs text-secondary mb-2">graduation_year:</div>
-                  <div className="text-2xl font-cyber font-bold text-primary animate-pulse-glow">2027</div>
-                  <div className="text-sm text-muted-foreground font-mono">target_reached</div>
+                <div className="text-center p-4 terminal-border rounded-lg">
+                  <div className="text-2xl font-cyber font-bold text-primary">2027</div>
+                  <div className="text-sm text-muted-foreground">Expected Graduation</div>
                 </div>
-                <div className="text-center p-4 terminal-border rounded-lg bg-background/50 backdrop-blur-sm animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                  <div className="font-mono text-xs text-secondary mb-2">current_cgpa:</div>
-                  <div className="text-2xl font-cyber font-bold text-secondary animate-pulse-glow">7.52</div>
-                  <div className="text-sm text-muted-foreground font-mono">performance_score</div>
+                <div className="text-center p-4 terminal-border rounded-lg">
+                  <div className="text-2xl font-cyber font-bold text-secondary">7.52</div>
+                  <div className="text-sm text-muted-foreground">Current CGPA</div>
                 </div>
               </div>
             </CardContent>
