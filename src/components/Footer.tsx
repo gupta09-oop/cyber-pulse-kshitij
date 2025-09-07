@@ -65,6 +65,9 @@ export const Footer = () => {
 
           {/* Right Section */}
           <div className="text-center md:text-right">
+            <div className="font-cyber text-xl font-bold text-primary mb-2">
+              Ready To Collaborate
+            </div>
             <div className="font-mono text-sm text-muted-foreground mb-1">
               Built with React + TailwindCSS
             </div>

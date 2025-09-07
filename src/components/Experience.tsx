@@ -86,8 +86,7 @@ export const Experience = () => {
 
               <div className="space-y-4">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Actively participating in Capture The Flag (CTF) competitions and cybersecurity challenges, 
-                  focusing on practical application of security concepts across multiple domains.
+                  Actively participating in Capture The Flag competitions and solving challenges in cryptography, web security, and digital forensics. These experiences have strengthened my practical skills in penetration testing, vulnerability assessment, and incident response.
                 </p>
                 
                 <div className="grid md:grid-cols-2 gap-6 mt-6">
