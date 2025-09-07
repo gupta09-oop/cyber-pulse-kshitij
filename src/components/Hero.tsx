@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Terminal, Shield } from "lucide-react";
+import { ArrowDown, Terminal, Shield, ArrowRight } from "lucide-react";
 
 const typewriterPhrases = [
   "Phishing Hunter",
@@ -102,7 +102,9 @@ export const Hero = () => {
             className="cyber-button px-8 py-4 text-lg font-mono border-secondary text-secondary hover:text-secondary"
             onClick={() => scrollToSection('about')}
           >
-            Start Scanning →
+            <span className="flex items-center gap-2">
+              Start Scanning <ArrowRight className="h-5 w-5" />
+            </span>
           </Button>
         </div>
 
