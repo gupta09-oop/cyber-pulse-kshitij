@@ -33,8 +33,7 @@ export const About = () => {
               </p>
               
               <p className="text-lg leading-relaxed text-muted-foreground">
-                I've completed projects such as CipherHide (a secure steganography web app) and a 
-                Wi-Fi Security Lab with ESP32 (Evil Twin and Deauthentication attack simulations). 
+                I've completed projects including a Wi-Fi Security Lab with ESP32 (Evil Twin and Deauthentication attack simulations). 
                 I am also developing PhishX, an AI-powered phishing detection tool designed to identify 
                 malicious links and emails in real time. These hands-on projects highlight my ability 
                 to explore both AI-driven security solutions and wireless network vulnerabilities.

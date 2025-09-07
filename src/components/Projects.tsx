@@ -21,22 +21,6 @@ export const Projects = () => {
       ]
     },
     {
-      title: "CipherHide",
-      status: "Completed",
-      description: "A secure web application that combines text encryption with steganography to hide encrypted messages within images. This project demonstrates practical implementation of cryptographic principles and covert communication techniques. I learned to integrate multiple security layers and developed skills in both frontend development and cryptographic algorithm implementation.",
-      tech: ["React", "Tailwind CSS", "Cryptography", "Steganography", "Vercel"],
-      icon: Lock,
-      color: "text-accent",
-      github: "https://github.com/gupta09-oop/Cipherhide-main.git",
-      demo: "https://cipherhide-main.vercel.app/",
-      features: [
-        "Text encryption and steganography",
-        "Image-based data hiding",
-        "Responsive web interface",
-        "Secure messaging capabilities"
-      ]
-    },
-    {
       title: "WiFi Security Lab with ESP32",
       status: "Completed",
       description: "A controlled laboratory simulation of WiFi security attacks including Evil Twin and Deauthentication attacks using ESP32 microcontroller. This project explored wireless network vulnerabilities and defensive countermeasures in a safe environment. I gained hands-on experience with IoT security, wireless penetration testing techniques, and understanding of 802.11 protocol vulnerabilities.",
