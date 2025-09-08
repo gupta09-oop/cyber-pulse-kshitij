@@ -48,15 +48,6 @@ export const Certifications = () => {
       image: "/lovable-uploads/939e9026-d747-407f-af32-55807e9beb61.png"
     },
     {
-      title: "AI for Cybersecurity & Bug Bounty Hunting",
-      issuer: "Udemy",
-      date: "Jul 14, 2025",
-      credential: "UC-18cdf247-7430-4ea9-807c-1d6ac8af2667",
-      type: "Course",
-      color: "text-secondary",
-      image: "/lovable-uploads/377293a3-d440-48ee-93d5-94b782f5b615.png"
-    },
-    {
       title: "Introduction to OSINT",
       issuer: "Security Blue Team",
       date: "May 14, 2025",
@@ -150,7 +141,7 @@ export const Certifications = () => {
         {/* Stats */}
         <div className="mt-16 grid md:grid-cols-3 gap-8 text-center">
           <div className="terminal-border p-6 rounded-lg">
-            <div className="text-3xl font-cyber font-bold text-primary mb-2">6</div>
+            <div className="text-3xl font-cyber font-bold text-primary mb-2">5</div>
             <div className="text-muted-foreground">Certifications Earned</div>
           </div>
           <div className="terminal-border p-6 rounded-lg">

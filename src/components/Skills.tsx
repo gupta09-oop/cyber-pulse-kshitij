@@ -88,14 +88,14 @@ export const Skills = () => {
             <div className="flex items-center mb-2">
               <span className="text-secondary text-sm font-mono">root@arsenal:~$</span>
             </div>
-            <div className="font-cyber text-3xl font-bold text-secondary mb-2 animate-fade-in">20+</div>
+            <div className="font-cyber text-3xl font-bold text-secondary mb-2 animate-fade-in">5+</div>
             <p className="text-muted-foreground font-mono">security_tools_mastered</p>
           </div>
           <div className="terminal-border p-6 rounded-lg bg-background/50 backdrop-blur-sm">
             <div className="flex items-center mb-2">
               <span className="text-secondary text-sm font-mono">root@certs:~$</span>
             </div>
-            <div className="font-cyber text-3xl font-bold text-accent mb-2 animate-fade-in">6</div>
+            <div className="font-cyber text-3xl font-bold text-accent mb-2 animate-fade-in">5</div>
             <p className="text-muted-foreground font-mono">certifications_earned</p>
           </div>
         </div>
