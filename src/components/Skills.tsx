@@ -16,12 +16,6 @@ export const Skills = () => {
       skills: ["Wireshark", "Burp Suite", "Nmap", "Metasploit", "Nessus", "OSINT Framework", "Aircrack-ng"]
     },
     {
-      title: "Security Specializations",
-      icon: Shield,
-      color: "text-accent",
-      skills: ["Penetration Testing", "Wireless Security", "Phishing Detection", "Vulnerability Assessment", "CTF Competitions", "IoT Security"]
-    },
-    {
       title: "Hardware & IoT",
       icon: Monitor,
       color: "text-primary",
@@ -37,7 +31,7 @@ export const Skills = () => {
       title: "Professional Skills",
       icon: Users,
       color: "text-accent",
-      skills: ["Problem-Solving", "Team Collaboration", "Project Management", "Technical Documentation"]
+      skills: ["Problem-Solving", "Team Collaboration", "Project Management", "Adaptability", "Continuous Learning"]
     }
   ];
 
