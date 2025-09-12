@@ -6,6 +6,15 @@ import { Award, Calendar, ExternalLink, Eye } from "lucide-react";
 export const Certifications = () => {
   const certifications = [
     {
+      title: "StackSmash CTF Playground",
+      issuer: "HackTheBox",
+      date: "Jul 2025",
+      credential: "Team: thexploiters0909",
+      type: "CTF Competition",
+      color: "text-accent",
+      image: "/lovable-uploads/stacksmash-ctf-certificate.jpg"
+    },
+    {
       title: "Career Essentials in Cybersecurity",
       issuer: "Microsoft & LinkedIn",
       date: "Apr 09, 2025",
@@ -141,7 +150,7 @@ export const Certifications = () => {
         {/* Stats */}
         <div className="mt-16 grid md:grid-cols-3 gap-8 text-center">
           <div className="terminal-border p-6 rounded-lg">
-            <div className="text-3xl font-cyber font-bold text-primary mb-2">5</div>
+            <div className="text-3xl font-cyber font-bold text-primary mb-2">6</div>
             <div className="text-muted-foreground">Certifications Earned</div>
           </div>
           <div className="terminal-border p-6 rounded-lg">
