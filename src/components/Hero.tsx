@@ -70,7 +70,7 @@ export const Hero = () => {
 
         {/* Tagline */}
         <p className="text-xl md:text-2xl text-muted-foreground font-mono mb-4">
-          Aspiring Security Analyst | Cybersecurity Enthusiast
+          Aspiring Security Analyst | Hack The Box Certified CTF Player | Cybersecurity Enthusiast
         </p>
 
         {/* Subtext */}
