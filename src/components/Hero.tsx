@@ -3,13 +3,13 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown, Terminal, Shield, ArrowRight } from "lucide-react";
 
 const typewriterPhrases = [
-  "Phishing Hunter",
-  "CTF Solver", 
-  "AI Defender",
-  "Fast Learner",
-  "Security Builder",
-  "Threat Analyst"
-];
+"Phishing Hunter",
+"CTF Solver",
+"AI Defender",
+"Fast Learner",
+"Security Builder",
+"Threat Analyst"];
+
 
 export const Hero = () => {
   const [currentPhrase, setCurrentPhrase] = useState(0);
@@ -19,16 +19,16 @@ export const Hero = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       const current = typewriterPhrases[currentPhrase];
-      
+
       if (!isDeleting) {
         setDisplayText(current.substring(0, displayText.length + 1));
-        
+
         if (displayText === current) {
           setTimeout(() => setIsDeleting(true), 2000);
         }
       } else {
         setDisplayText(current.substring(0, displayText.length - 1));
-        
+
         if (displayText === "") {
           setIsDeleting(false);
           setCurrentPhrase((prev) => (prev + 1) % typewriterPhrases.length);
@@ -49,11 +49,11 @@ export const Hero = () => {
         {/* Profile Image */}
         <div className="mb-8 flex justify-center">
           <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden terminal-border shadow-lg">
-            <img 
-              src="/lovable-uploads/6d8fbab6-df0e-4104-8cff-c8c1ff08a385.png" 
+            <img
+              src="/lovable-uploads/6d8fbab6-df0e-4104-8cff-c8c1ff08a385.png"
               alt="Kshitij Gupta - Cybersecurity Professional"
-              className="w-full h-full object-cover"
-            />
+              className="w-full h-full object-cover" />
+
           </div>
         </div>
 
@@ -69,8 +69,8 @@ export const Hero = () => {
         </h1>
 
         {/* Tagline */}
-        <p className="text-xl md:text-2xl text-muted-foreground font-mono mb-4">
-          Aspiring Security Analyst | Hack The Box Certified CTF Player | Cybersecurity Enthusiast
+        <p className="text-xl md:text-2xl text-muted-foreground font-mono mb-4">Aspiring Security Analyst | Cybersecurity Enthusiast
+
         </p>
 
         {/* Subtext */}
@@ -91,17 +91,17 @@ export const Hero = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <Button 
+          <Button
             className="cyber-button px-8 py-4 text-lg font-mono"
-            onClick={() => scrollToSection('projects')}
-          >
+            onClick={() => scrollToSection('projects')}>
+
             View My Work
           </Button>
-          <Button 
-            variant="outline" 
+          <Button
+            variant="outline"
             className="cyber-button px-8 py-4 text-lg font-mono border-secondary text-secondary hover:text-secondary"
-            onClick={() => scrollToSection('about')}
-          >
+            onClick={() => scrollToSection('about')}>
+
             <span className="flex items-center gap-2">
               Start Scanning <ArrowRight className="h-5 w-5" />
             </span>
@@ -113,6 +113,6 @@ export const Hero = () => {
           <ArrowDown className="text-primary h-6 w-6" />
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };

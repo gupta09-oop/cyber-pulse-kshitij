@@ -48,10 +48,10 @@ export const About = () => {
               
               {/* Resume Button */}
               <div className="pt-6">
-               <Button 
-                 asChild 
-                 className="cyber-button w-full sm:w-auto px-8 py-3 font-mono"
-               >
+               <Button
+                  asChild
+                  className="cyber-button w-full sm:w-auto px-8 py-3 font-mono">
+
                  <a href="/lovable-uploads/fc68869f-79ce-4984-a28e-28b7145095da.png" download="Kshitij_Gupta_Resume.png">
                    <Download className="mr-2 h-5 w-5" />
                    Download Resume
@@ -94,8 +94,8 @@ export const About = () => {
                     <span className="text-sm text-muted-foreground">
                       Semester:
                     </span>
-                    <span className="font-mono text-primary">
-                      Second
+                    <span className="font-mono text-primary">Third
+
                     </span>
                   </div>
                 </div>
@@ -108,7 +108,7 @@ export const About = () => {
                   <div className="text-sm text-muted-foreground">Expected Graduation</div>
                 </div>
                 <div className="text-center p-4 terminal-border rounded-lg">
-                  <div className="text-2xl font-cyber font-bold text-secondary">7.52</div>
+                  <div className="text-2xl font-cyber font-bold text-secondary">7.92</div>
                   <div className="text-sm text-muted-foreground">Current CGPA</div>
                 </div>
               </div>
@@ -116,6 +116,6 @@ export const About = () => {
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
