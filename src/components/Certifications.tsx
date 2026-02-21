@@ -24,30 +24,6 @@ export const Certifications = () => {
       image: "/lovable-uploads/464dfb19-fc57-42ab-bdb4-9d5762e4988b.png"
     },
     {
-      title: "Cybersecurity Analyst Job Simulation",
-      issuer: "Tata Forage",
-      date: "Feb 15, 2025",
-      type: "Simulation",
-      color: "text-secondary",
-      image: "/lovable-uploads/09236005-af4d-4c89-a0ad-3240b07af8d0.png"
-    },
-    {
-      title: "Cyber Job Simulation",
-      issuer: "Deloitte Forage",
-      date: "Jun 17, 2025",
-      type: "Simulation",
-      color: "text-accent",
-      image: "/lovable-uploads/df256736-1337-45c3-a6ce-2ae9c2110fde.png"
-    },
-    {
-      title: "TryHackMe Certificate",
-      issuer: "TryHackMe",
-      date: "Jul 25, 2025",
-      credential: "THM-AW3FPSEPC",
-      type: "Platform",
-      color: "text-primary"
-    },
-    {
       title: "TryHackMe Advent of Cyber 2024",
       issuer: "TryHackMe",
       date: "Jul 25, 2025",
@@ -150,7 +126,7 @@ export const Certifications = () => {
         {/* Stats */}
         <div className="mt-16 grid md:grid-cols-3 gap-8 text-center">
           <div className="terminal-border p-6 rounded-lg">
-            <div className="text-3xl font-cyber font-bold text-primary mb-2">6</div>
+            <div className="text-3xl font-cyber font-bold text-primary mb-2">4</div>
             <div className="text-muted-foreground">Certifications Earned</div>
           </div>
           <div className="terminal-border p-6 rounded-lg">
