@@ -54,23 +54,23 @@ export const Blog = () => {
               </div>
 
               <Button className="cyber-button px-8 py-3 text-lg font-mono" asChild>
-                <a 
-                  href="https://hashnode.com/@KshitijGupta" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
+                <a
+
+                  target="_blank"
+                  rel="noopener noreferrer" href="https://medium.com/@guptakshitij4723">
+
                   <ExternalLink className="mr-2 h-5 w-5" />
                   Visit My Blog
                 </a>
               </Button>
 
               <p className="text-sm text-muted-foreground mt-4 font-mono">
-                hashnode.com/@KshitijGupta
+
               </p>
             </CardContent>
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
