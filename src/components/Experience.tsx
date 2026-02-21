@@ -68,68 +68,6 @@ export const Experience = () => {
               </div>
             </CardContent>
           </Card>
-
-          {/* CTF & Practice Experience */}
-          <Card className="project-card">
-            <CardContent className="p-8">
-              <div className="flex items-center mb-6">
-                <Trophy className="text-secondary mr-3 h-6 w-6" />
-                <div>
-                  <h3 className="font-cyber text-2xl font-bold text-secondary">
-                    CTF Challenges & Cybersecurity Practice
-                  </h3>
-                  <p className="text-accent font-mono">
-                    Continuous Learning & Skill Development
-                  </p>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Actively participating in Capture The Flag competitions and solving challenges in cryptography, web security, and digital forensics. These experiences have strengthened my practical skills in penetration testing, vulnerability assessment, and incident response.
-                </p>
-                
-                <div className="grid md:grid-cols-2 gap-6 mt-6">
-                  <div>
-                    <h4 className="font-cyber text-lg font-bold text-primary mb-3">
-                      Challenge Categories
-                    </h4>
-                    <ul className="space-y-2 text-muted-foreground">
-                      <li className="flex items-center">
-                        <span className="text-primary mr-2">•</span>
-                        Cryptography & Encryption
-                      </li>
-                      <li className="flex items-center">
-                        <span className="text-primary mr-2">•</span>
-                        Web Security & OWASP Top 10
-                      </li>
-                      <li className="flex items-center">
-                        <span className="text-primary mr-2">•</span>
-                        Digital Forensics & Investigation
-                      </li>
-                      <li className="flex items-center">
-                        <span className="text-primary mr-2">•</span>
-                        Network Security Analysis
-                      </li>
-                    </ul>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-cyber text-lg font-bold text-secondary mb-3">
-                      Tools & Technologies
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {['Linux', 'Python', 'Metasploit', 'Burp Suite', 'Wireshark', 'Nmap', 'Nessus', 'Maltego'].map((tool) => (
-                        <span key={tool} className="skill-tag">
-                          {tool}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </section>
