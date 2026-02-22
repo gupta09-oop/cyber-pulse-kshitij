@@ -86,8 +86,8 @@ export const About = () => {
                     <span className="text-sm text-muted-foreground">
                       Current CGPA:
                     </span>
-                    <span className="font-mono text-secondary font-bold">
-                      7.52
+                    <span className="font-mono text-secondary font-bold">7.92
+
                     </span>
                   </div>
                   <div className="flex items-center justify-between mt-1">
