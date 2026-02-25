@@ -3,63 +3,68 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 
 export const Contact = () => {
   const contactInfo = [
-    { icon: Mail, label: "email", value: "kshitijexploit@gmail.com", href: "mailto:kshitijexploit@gmail.com", color: "text-primary" },
-    { icon: Phone, label: "phone", value: "+91 9026372084", href: "tel:+919026372084", color: "text-secondary" },
-    { icon: Github, label: "github", value: "@gupta09-oop", href: "https://github.com/gupta09-oop", color: "text-primary" },
-    { icon: Linkedin, label: "linkedin", value: "Kshitij Gupta", href: "https://linkedin.com/in/kshitij-gupta", color: "text-accent" },
-    { icon: Trophy, label: "tryhackme", value: "Profile", href: "https://tryhackme.com/p/guptakshitij4723", color: "text-secondary" },
+    { icon: Mail, label: "Email", value: "kshitijexploit@gmail.com", href: "mailto:kshitijexploit@gmail.com", color: "text-primary" },
+    { icon: Phone, label: "Phone", value: "+91 9026372084", href: "tel:+919026372084", color: "text-secondary" },
+    { icon: Github, label: "GitHub", value: "@gupta09-oop", href: "https://github.com/gupta09-oop", color: "text-accent" },
+    { icon: Linkedin, label: "LinkedIn", value: "Kshitij Gupta", href: "https://linkedin.com/in/kshitij-gupta", color: "text-primary" },
+    { icon: Trophy, label: "TryHackMe", value: "Profile", href: "https://tryhackme.com/p/guptakshitij4723", color: "text-secondary" },
   ];
 
   return (
-    <section id="contact" className="py-24 px-4 matrix-gradient">
-      <div className="max-w-4xl mx-auto">
+    <section id="contact" className="py-24 px-4 gradient-mesh relative overflow-hidden">
+      <div className="max-w-6xl mx-auto relative z-10">
         <AnimatedSection>
-          <div className="mb-16">
-            <p className="font-mono text-[10px] text-muted-foreground mb-2">
-              <span className="text-secondary">$</span> nc -lvp 4444
-            </p>
-            <h2 className="section-header text-3xl md:text-4xl font-terminal mb-4">CONTACT</h2>
-            <div className="w-24 h-px bg-primary/30"></div>
-            <p className="font-mono text-[10px] text-primary mt-3">
-              <span className="status-online inline-block mr-2 align-middle" />
-              listening on [0.0.0.0] port 4444 ...
-            </p>
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center mb-4">
+              <Terminal className="text-primary mr-3 h-7 w-7" />
+              <h2 className="section-header text-4xl md:text-5xl font-cyber font-bold">CONTACT</h2>
+              <Wifi className="text-secondary ml-3 h-7 w-7" />
+            </div>
+            <div className="w-48 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto"></div>
+            <div className="font-mono text-accent text-xs mt-4">[ SECURE CONNECTION ACTIVE ]</div>
           </div>
         </AnimatedSection>
 
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <AnimatedSection delay={0.1}>
-            <div className="terminal-card mb-6">
-              <div className="flex items-center gap-2 px-4 py-2 border-b border-primary/10 bg-primary/3">
-                <div className="w-2 h-2 rounded-full bg-secondary/60" />
-                <div className="w-2 h-2 rounded-full bg-accent/60" />
-                <div className="w-2 h-2 rounded-full bg-primary/60" />
-                <span className="ml-2 font-mono text-[10px] text-muted-foreground">root@kshitij:~$ cat contact.conf</span>
+            <div className="glass-card rounded-xl overflow-hidden mb-8">
+              {/* Terminal Header */}
+              <div className="border-b border-primary/10 p-3 bg-primary/5">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2.5 h-2.5 rounded-full bg-destructive/80"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-secondary/80"></div>
+                  <span className="ml-4 font-mono text-xs text-muted-foreground">root@cyberpulse:~$ cat contact.txt</span>
+                </div>
               </div>
 
-              <div className="p-6">
-                <div className="mb-5 border-l-2 border-secondary/30 pl-3">
-                  <p className="font-mono text-[10px] text-muted-foreground leading-relaxed">
-                    <span className="text-secondary"># </span>All channels monitored. Encrypted comms preferred.<br />
-                    <span className="text-secondary"># </span>Response time: &lt; 24h
-                  </p>
-                </div>
+              <div className="p-8">
+                <h3 className="font-cyber text-xl font-bold text-secondary mb-4 flex items-center">
+                  <Zap className="mr-2 h-5 w-5 text-accent" />
+                  COMMUNICATION_CHANNELS
+                </h3>
+                <p className="text-sm text-muted-foreground mb-8 font-mono border-l-2 border-primary/30 pl-4 leading-relaxed">
+                  &gt; Cybersecurity expert ready for collaboration<br />
+                  &gt; All channels encrypted and monitored
+                </p>
 
-                <div className="space-y-1">
+                <div className="space-y-3">
                   {contactInfo.map((info, index) => (
                     <a
                       key={index}
                       href={info.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center p-3 hover:bg-primary/3 transition-all duration-300 border border-transparent hover:border-primary/10"
+                      className="group flex items-center p-4 glass-card hover:border-primary/30 transition-all duration-300"
                     >
-                      <info.icon className={`${info.color} h-4 w-4 mr-4 flex-shrink-0 group-hover:text-glow-green transition-all`} />
-                      <div className="flex-1 min-w-0">
-                        <span className="font-mono text-[9px] text-muted-foreground uppercase tracking-widest">{info.label}</span>
-                        <div className={`${info.color} font-mono text-xs truncate`}>{info.value}</div>
+                      <div className="mr-4 p-2 rounded-lg bg-background/50 group-hover:scale-110 transition-transform">
+                        <info.icon className={`${info.color} h-5 w-5`} />
                       </div>
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary/20 group-hover:bg-primary group-hover:shadow-[0_0_6px] group-hover:shadow-primary/50 transition-all flex-shrink-0" />
+                      <div className="flex-1">
+                        <div className="font-mono text-xs text-muted-foreground uppercase tracking-wider">[{info.label}]</div>
+                        <div className={`${info.color} font-semibold text-base`}>{info.value}</div>
+                      </div>
+                      <div className="w-2 h-2 rounded-full bg-primary/30 group-hover:bg-primary group-hover:shadow-lg group-hover:shadow-primary/30 transition-all" />
                     </a>
                   ))}
                 </div>
@@ -67,22 +72,48 @@ export const Contact = () => {
             </div>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-3 gap-3">
-            {[
-              { label: "connection", status: "SECURE", color: "text-primary" },
-              { label: "availability", status: "ONLINE", color: "text-primary" },
-              { label: "encryption", status: "AES-256", color: "text-secondary" },
-            ].map((item, i) => (
-              <AnimatedSection key={i} delay={0.2 + i * 0.1}>
-                <div className="terminal-card p-3 flex items-center justify-between">
-                  <span className="font-mono text-[9px] text-muted-foreground uppercase">{item.label}</span>
-                  <span className={`flex items-center ${item.color} font-mono text-[10px]`}>
-                    <div className="status-online mr-1.5" />
-                    {item.status}
-                  </span>
+          {/* Status panels */}
+          <div className="grid md:grid-cols-2 gap-6">
+            <AnimatedSection delay={0.2}>
+              <div className="glass-card p-6">
+                <h4 className="font-cyber text-sm font-bold text-accent mb-4 flex items-center">
+                  <Terminal className="mr-2 h-4 w-4" /> RESPONSE_TIME
+                </h4>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center p-3 bg-background/30 rounded-lg">
+                    <span className="font-mono text-xs">Email Response</span>
+                    <span className="font-cyber font-bold text-primary">&lt; 24h</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-background/30 rounded-lg">
+                    <span className="font-mono text-xs">Success Rate</span>
+                    <span className="font-cyber font-bold text-secondary">100%</span>
+                  </div>
                 </div>
-              </AnimatedSection>
-            ))}
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.3}>
+              <div className="glass-card p-6">
+                <h4 className="font-cyber text-sm font-bold text-primary mb-4 flex items-center">
+                  <Zap className="mr-2 h-4 w-4" /> SYSTEM.status
+                </h4>
+                <div className="space-y-3">
+                  {[
+                    { label: "Connection", status: "SECURE", color: "text-secondary" },
+                    { label: "Availability", status: "ONLINE", color: "text-primary" },
+                    { label: "Encryption", status: "AES-256", color: "text-secondary" },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center justify-between">
+                      <span className="font-mono text-xs">{item.label}</span>
+                      <span className={`flex items-center ${item.color} text-sm font-mono`}>
+                        <div className={`w-1.5 h-1.5 rounded-full bg-current mr-2 animate-pulse`} />
+                        {item.status}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </div>

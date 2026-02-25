@@ -2,377 +2,258 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ═══════════════════════════════════════════════
-   MR. ROBOT — FSOCIETY DESIGN SYSTEM
-   "Control is an illusion."
-   ═══════════════════════════════════════════════ */
+/* CyberPulse V2 — Next-Level Design System */
 
 @layer base {
   :root {
-    --mr-black: 0 0% 3%;
-    --mr-void: 0 0% 1%;
-    --mr-terminal: 120 100% 40%;
-    --mr-red: 0 90% 45%;
-    --mr-amber: 38 100% 50%;
-    --mr-dim: 0 0% 55%;
-    --mr-ghost: 0 0% 75%;
-    --mr-white: 0 0% 88%;
-    --mr-blue: 210 80% 50%;
+    --cyber-dark: 220 20% 6%;
+    --cyber-darker: 220 25% 4%;
+    --cyber-cyan: 180 100% 50%;
+    --cyber-green: 85 100% 53%;
+    --cyber-blue: 225 100% 66%;
+    --cyber-purple: 270 80% 60%;
+    --cyber-gray: 0 0% 92%;
+    --cyber-gray-muted: 0 0% 60%;
 
-    --background: var(--mr-black);
-    --foreground: var(--mr-ghost);
-    --card: 0 0% 5%;
-    --card-foreground: var(--mr-ghost);
-    --popover: var(--mr-void);
-    --popover-foreground: var(--mr-ghost);
-    --primary: var(--mr-terminal);
-    --primary-foreground: var(--mr-void);
-    --secondary: var(--mr-red);
-    --secondary-foreground: var(--mr-white);
-    --muted: 0 0% 8%;
-    --muted-foreground: var(--mr-dim);
-    --accent: var(--mr-amber);
-    --accent-foreground: var(--mr-void);
-    --destructive: var(--mr-red);
-    --destructive-foreground: var(--mr-white);
-    --border: 0 0% 12%;
-    --input: 0 0% 8%;
-    --ring: var(--mr-terminal);
-    --radius: 0px;
+    --background: var(--cyber-dark);
+    --foreground: var(--cyber-gray);
+    --card: 220 20% 8%;
+    --card-foreground: var(--cyber-gray);
+    --popover: var(--cyber-darker);
+    --popover-foreground: var(--cyber-gray);
+    --primary: var(--cyber-cyan);
+    --primary-foreground: var(--cyber-dark);
+    --secondary: var(--cyber-green);
+    --secondary-foreground: var(--cyber-dark);
+    --muted: 220 20% 12%;
+    --muted-foreground: var(--cyber-gray-muted);
+    --accent: var(--cyber-blue);
+    --accent-foreground: var(--cyber-gray);
+    --destructive: 0 84% 60%;
+    --destructive-foreground: var(--cyber-gray);
+    --border: 220 20% 14%;
+    --input: 220 20% 12%;
+    --ring: var(--cyber-cyan);
+    --radius: 0.75rem;
+
+    --glow-primary: 0 0 20px hsl(var(--cyber-cyan) / 0.4), 0 0 60px hsl(var(--cyber-cyan) / 0.1);
+    --glow-secondary: 0 0 20px hsl(var(--cyber-green) / 0.4), 0 0 60px hsl(var(--cyber-green) / 0.1);
+    --glow-accent: 0 0 20px hsl(var(--cyber-blue) / 0.4), 0 0 60px hsl(var(--cyber-blue) / 0.1);
+    --grid-size: 60px;
+    --grid-color: hsl(var(--cyber-cyan) / 0.06);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  html {
-    scrollbar-width: thin;
-    scrollbar-color: hsl(var(--mr-terminal) / 0.3) hsl(var(--mr-void));
-  }
-
-  ::selection {
-    background: hsl(var(--mr-terminal) / 0.3);
-    color: hsl(var(--mr-terminal));
-  }
-
-  .font-terminal { font-family: 'VT323', monospace; }
-  .font-mono { font-family: 'Fira Code', 'IBM Plex Mono', monospace; }
-  .font-hacker { font-family: 'Share Tech Mono', monospace; }
-  .font-body { font-family: 'IBM Plex Mono', monospace; }
+  .font-cyber { font-family: 'Orbitron', monospace; }
+  .font-mono { font-family: 'Roboto Mono', monospace; }
+  .font-body { font-family: 'Inter', sans-serif; }
 }
 
 @layer components {
-  /* ── Terminal Card ── */
-  .terminal-card {
-    background: hsl(var(--mr-void));
-    border: 1px solid hsl(var(--mr-terminal) / 0.15);
+  /* Glassmorphism Card */
+  .glass-card {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--card) / 0.6),
+      hsl(var(--cyber-darker) / 0.4)
+    );
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid hsl(var(--cyber-cyan) / 0.12);
+    border-radius: var(--radius);
+    transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
-    transition: all 0.3s ease;
   }
 
-  .terminal-card::before {
+  .glass-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, hsl(var(--mr-terminal) / 0.5), transparent);
-  }
-
-  .terminal-card:hover {
-    border-color: hsl(var(--mr-terminal) / 0.4);
-    box-shadow: 0 0 30px hsl(var(--mr-terminal) / 0.05), inset 0 0 30px hsl(var(--mr-terminal) / 0.02);
-  }
-
-  /* ── Glitch Text Effect ── */
-  .glitch {
-    position: relative;
-    animation: glitch-skew 4s infinite linear alternate-reverse;
-  }
-
-  .glitch::before,
-  .glitch::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .glitch::before {
-    color: hsl(var(--mr-red));
-    animation: glitch-effect 3s infinite linear alternate-reverse;
-    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
-    transform: translate(-2px);
-  }
-
-  .glitch::after {
-    color: hsl(var(--mr-terminal));
-    animation: glitch-effect 2s infinite linear alternate-reverse;
-    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
-    transform: translate(2px);
-  }
-
-  @keyframes glitch-effect {
-    0% { transform: translate(0); }
-    20% { transform: translate(-3px, 2px); }
-    40% { transform: translate(-1px, -1px); }
-    60% { transform: translate(3px, 1px); }
-    80% { transform: translate(1px, -2px); }
-    100% { transform: translate(0); }
-  }
-
-  @keyframes glitch-skew {
-    0% { transform: skew(0deg); }
-    20% { transform: skew(0deg); }
-    21% { transform: skew(1deg); }
-    22% { transform: skew(0deg); }
-    80% { transform: skew(0deg); }
-    81% { transform: skew(-0.5deg); }
-    82% { transform: skew(0deg); }
-    100% { transform: skew(0deg); }
-  }
-
-  /* ── Scanline Overlay ── */
-  .scanlines::after {
-    content: '';
-    position: fixed;
     inset: 0;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      hsl(0 0% 0% / 0.03) 2px,
-      hsl(0 0% 0% / 0.03) 4px
+    background: linear-gradient(
+      135deg,
+      hsl(var(--cyber-cyan) / 0.03),
+      transparent 40%,
+      hsl(var(--cyber-blue) / 0.03)
     );
     pointer-events: none;
-    z-index: 100;
   }
 
-  /* ── CRT Flicker ── */
-  .crt-flicker {
-    animation: crt-flicker 0.15s infinite;
+  .glass-card:hover {
+    border-color: hsl(var(--cyber-cyan) / 0.3);
+    box-shadow:
+      0 8px 32px hsl(var(--cyber-cyan) / 0.08),
+      0 0 1px hsl(var(--cyber-cyan) / 0.3),
+      inset 0 0 60px hsl(var(--cyber-cyan) / 0.02);
+    transform: translateY(-4px);
   }
 
-  @keyframes crt-flicker {
-    0% { opacity: 0.97; }
-    50% { opacity: 1; }
-    100% { opacity: 0.98; }
-  }
-
-  /* ── Section Header (terminal style) ── */
-  .section-header {
-    font-family: 'VT323', monospace;
-    color: hsl(var(--mr-terminal));
-    text-shadow: 0 0 10px hsl(var(--mr-terminal) / 0.5), 0 0 40px hsl(var(--mr-terminal) / 0.2);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-
-  .section-header::before {
-    content: '// ';
-    color: hsl(var(--mr-dim));
-  }
-
-  /* ── Hacker Button ── */
-  .hack-btn {
-    background: transparent;
-    border: 1px solid hsl(var(--mr-terminal) / 0.5);
-    color: hsl(var(--mr-terminal));
-    font-family: 'Fira Code', monospace;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+  /* Animated border gradient */
+  .animated-border {
     position: relative;
+    background: hsl(var(--card));
+    border-radius: var(--radius);
     overflow: hidden;
-    transition: all 0.3s;
   }
-
-  .hack-btn::before {
+  .animated-border::before {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    background: hsl(var(--mr-terminal) / 0.1);
-    transition: height 0.3s;
+    inset: 0;
+    padding: 1px;
+    border-radius: var(--radius);
+    background: linear-gradient(
+      var(--border-angle, 0deg),
+      hsl(var(--cyber-cyan) / 0.4),
+      hsl(var(--cyber-blue) / 0.2),
+      hsl(var(--cyber-green) / 0.3),
+      hsl(var(--cyber-cyan) / 0.4)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: border-rotate 6s linear infinite;
   }
 
-  .hack-btn:hover::before {
-    height: 100%;
+  @property --border-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
   }
 
-  .hack-btn:hover {
-    box-shadow: 0 0 20px hsl(var(--mr-terminal) / 0.2);
-    text-shadow: 0 0 10px hsl(var(--mr-terminal) / 0.5);
+  @keyframes border-rotate {
+    to { --border-angle: 360deg; }
   }
 
-  .hack-btn-red {
-    border-color: hsl(var(--mr-red) / 0.5);
-    color: hsl(var(--mr-red));
-  }
-
-  .hack-btn-red::before {
-    background: hsl(var(--mr-red) / 0.1);
-  }
-
-  .hack-btn-red:hover {
-    box-shadow: 0 0 20px hsl(var(--mr-red) / 0.2);
-    text-shadow: 0 0 10px hsl(var(--mr-red) / 0.5);
-  }
-
-  /* ── Terminal Prompt ── */
-  .prompt {
-    color: hsl(var(--mr-terminal));
-    font-family: 'Fira Code', monospace;
-  }
-
-  .prompt::before {
-    content: '❯ ';
-    color: hsl(var(--mr-red));
-  }
-
-  /* ── Skill Tag ── */
-  .skill-tag {
-    background: hsl(var(--mr-terminal) / 0.05);
-    border: 1px solid hsl(var(--mr-terminal) / 0.2);
-    color: hsl(var(--mr-terminal));
-    padding: 0.25rem 0.6rem;
-    font-family: 'Fira Code', monospace;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    transition: all 0.3s;
-  }
-
-  .skill-tag:hover {
-    background: hsl(var(--mr-terminal) / 0.1);
-    box-shadow: 0 0 10px hsl(var(--mr-terminal) / 0.1);
-  }
-
-  /* ── Matrix Rain Gradient ── */
-  .matrix-gradient {
+  /* Gradient mesh background for sections */
+  .gradient-mesh {
     position: relative;
   }
-
-  .matrix-gradient::before {
+  .gradient-mesh::before {
     content: '';
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 800px 600px at 20% 50%, hsl(var(--mr-terminal) / 0.03), transparent),
-      radial-gradient(ellipse 600px 400px at 80% 20%, hsl(var(--mr-red) / 0.02), transparent);
+      radial-gradient(ellipse 600px 400px at 20% 20%, hsl(var(--cyber-cyan) / 0.04), transparent),
+      radial-gradient(ellipse 500px 500px at 80% 80%, hsl(var(--cyber-blue) / 0.04), transparent),
+      radial-gradient(ellipse 400px 300px at 50% 50%, hsl(var(--cyber-green) / 0.02), transparent);
     pointer-events: none;
   }
 
-  /* ── Typing cursor ── */
-  .cursor-blink {
-    animation: blink 1s step-end infinite;
+  .cyber-grid {
+    background-image:
+      linear-gradient(var(--grid-color) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: var(--grid-size) var(--grid-size);
   }
 
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
+  .glow-text { text-shadow: var(--glow-primary); }
+  .glow-text-secondary { text-shadow: var(--glow-secondary); }
+  .glow-text-accent { text-shadow: var(--glow-accent); }
 
-  /* ── Noise texture ── */
-  .noise-bg {
-    position: relative;
-  }
-
-  .noise-bg::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    opacity: 0.015;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 50;
-  }
-
-  /* ── Glass card (legacy compat) ── */
-  .glass-card {
-    @apply terminal-card;
+  .terminal-border {
+    border: 1px solid hsl(var(--cyber-cyan) / 0.2);
+    box-shadow:
+      0 0 10px hsl(var(--cyber-cyan) / 0.05),
+      inset 0 0 10px hsl(var(--cyber-cyan) / 0.02);
   }
 
   .cyber-button {
-    @apply hack-btn;
+    background: linear-gradient(135deg, hsl(var(--cyber-cyan) / 0.1), hsl(var(--cyber-blue) / 0.1));
+    border: 1px solid hsl(var(--cyber-cyan) / 0.4);
+    color: hsl(var(--cyber-cyan));
+    text-shadow: 0 0 10px hsl(var(--cyber-cyan) / 0.3);
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+  }
+  .cyber-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--cyber-cyan) / 0.15), transparent);
+    transition: left 0.5s;
+  }
+  .cyber-button:hover::before { left: 100%; }
+  .cyber-button:hover {
+    box-shadow: 0 0 30px hsl(var(--cyber-cyan) / 0.3), inset 0 0 20px hsl(var(--cyber-cyan) / 0.05);
+    transform: translateY(-2px);
   }
 
-  /* ── Status indicator ── */
-  .status-online {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: hsl(var(--mr-terminal));
-    box-shadow: 0 0 6px hsl(var(--mr-terminal) / 0.6);
-    animation: pulse-dot 2s ease-in-out infinite;
+  .section-header {
+    font-family: 'Roboto Mono', monospace;
+    color: hsl(var(--cyber-green));
+    text-shadow: 0 0 10px hsl(var(--cyber-green) / 0.4);
+  }
+  .section-header::before {
+    content: '>_ ';
+    color: hsl(var(--cyber-cyan));
   }
 
-  @keyframes pulse-dot {
-    0%, 100% { box-shadow: 0 0 6px hsl(var(--mr-terminal) / 0.6); }
-    50% { box-shadow: 0 0 12px hsl(var(--mr-terminal)); }
+  .skill-tag {
+    background: hsl(var(--cyber-blue) / 0.1);
+    border: 1px solid hsl(var(--cyber-blue) / 0.2);
+    color: hsl(var(--cyber-blue));
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.8rem;
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(4px);
+  }
+  .skill-tag:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px hsl(var(--cyber-blue) / 0.2);
+    background: hsl(var(--cyber-blue) / 0.15);
   }
 
-  /* ── Border styles ── */
-  .terminal-border {
-    border: 1px solid hsl(var(--mr-terminal) / 0.15);
-  }
-
-  .red-border {
-    border: 1px solid hsl(var(--mr-red) / 0.2);
-  }
-
-  /* ── Gradient mesh (compat) ── */
-  .gradient-mesh {
-    @apply matrix-gradient;
-  }
-
-  /* ── Font compat ── */
-  .font-cyber {
-    font-family: 'VT323', monospace;
+  /* Legacy compat */
+  .project-card {
+    @apply glass-card;
   }
 }
 
 @layer utilities {
-  @keyframes matrix-fall {
-    0% { transform: translateY(-100%); opacity: 1; }
-    100% { transform: translateY(100vh); opacity: 0; }
+  @keyframes grid-pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
   }
-
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
   @keyframes scan-line {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(100vw); }
   }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-6px); }
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 5px hsl(var(--cyber-cyan) / 0.2); }
+    50% { box-shadow: 0 0 20px hsl(var(--cyber-cyan) / 0.6); }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
   }
 
   .animate-float { animation: float 3s ease-in-out infinite; }
-  .animate-scan { animation: scan-line 3s linear infinite; }
-
-  .text-glow-green {
-    text-shadow: 0 0 7px hsl(var(--mr-terminal) / 0.5), 0 0 30px hsl(var(--mr-terminal) / 0.2);
+  .animate-scan { animation: scan-line 2s linear infinite; }
+  .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--cyber-cyan) / 0.1),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
   }
-
-  .text-glow-red {
-    text-shadow: 0 0 7px hsl(var(--mr-red) / 0.5), 0 0 30px hsl(var(--mr-red) / 0.2);
-  }
-
-  .text-glow-amber {
-    text-shadow: 0 0 7px hsl(var(--mr-amber) / 0.5), 0 0 30px hsl(var(--mr-amber) / 0.2);
-  }
-
-  .glow-text { @apply text-glow-green; }
-  .glow-text-secondary { @apply text-glow-red; }
-  .glow-text-accent { @apply text-glow-amber; }
 }
 
 @layer base {
   * { @apply border-border; }
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'IBM Plex Mono', monospace;
-  }
+  body { @apply bg-background text-foreground; }
 }

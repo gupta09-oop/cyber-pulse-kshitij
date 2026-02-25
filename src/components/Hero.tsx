@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, Shield } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowDown, Terminal, Shield, ArrowRight } from "lucide-react";
 
 const typewriterPhrases = [
   "Phishing Hunter",
   "CTF Solver",
   "AI Defender",
-  "Exploit Developer",
+  "Fast Learner",
   "Security Builder",
   "Threat Analyst",
 ];
@@ -41,136 +42,116 @@ export const Hero = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative px-4 pt-16">
-      <div className="max-w-4xl mx-auto w-full">
-        {/* Terminal window */}
+      <div className="text-center max-w-4xl mx-auto">
+        {/* Profile Image */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="terminal-card"
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+          className="mb-8 flex justify-center"
         >
-          {/* Terminal title bar */}
-          <div className="flex items-center gap-2 px-4 py-2 border-b border-primary/10 bg-primary/5">
-            <div className="w-2.5 h-2.5 rounded-full bg-secondary/80" />
-            <div className="w-2.5 h-2.5 rounded-full bg-accent/60" />
-            <div className="w-2.5 h-2.5 rounded-full bg-primary/60" />
-            <span className="ml-3 font-mono text-[10px] text-muted-foreground">root@fsociety:~/portfolio — bash</span>
-          </div>
-
-          <div className="p-6 md:p-10">
-            {/* Boot sequence */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="mb-6 space-y-1"
-            >
-              <p className="font-mono text-[11px] text-muted-foreground">
-                <span className="text-primary">$</span> cat /etc/motd
-              </p>
-              <p className="font-mono text-[10px] text-muted-foreground/60">
-                Last login: {new Date().toLocaleDateString()} from 127.0.0.1
-              </p>
-            </motion.div>
-
-            {/* Profile image */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="flex items-center gap-6 mb-8"
-            >
-              <div className="relative flex-shrink-0">
-                <div className="w-20 h-20 md:w-24 md:h-24 overflow-hidden border border-primary/30">
-                  <img
-                    src="/lovable-uploads/6d8fbab6-df0e-4104-8cff-c8c1ff08a385.png"
-                    alt="Kshitij Gupta"
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                  />
-                </div>
-                <div className="absolute -bottom-1 -right-1 status-online" />
-              </div>
-
-              <div>
-                <h1
-                  className="font-terminal text-4xl sm:text-5xl md:text-7xl text-primary text-glow-green glitch tracking-wider"
-                  data-text="KSHITIJ GUPTA"
-                >
-                  KSHITIJ GUPTA
-                </h1>
-                <p className="font-mono text-xs text-muted-foreground mt-2">
-                  <span className="text-secondary">uid=</span>1337
-                  <span className="text-secondary ml-2">gid=</span>hackers
-                  <span className="text-secondary ml-2">groups=</span>ctf,pentest,osint
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Description */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-              className="mb-6 border-l-2 border-secondary/30 pl-4"
-            >
-              <p className="font-mono text-sm text-foreground/70 leading-relaxed">
-                <span className="text-secondary">// </span>
-                Aspiring Security Analyst. Exploring how systems break —<br />
-                <span className="text-secondary">// </span>
-                and how to defend them better. Black hat mindset, white hat ethics.
-              </p>
-            </motion.div>
-
-            {/* Typewriter */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1, duration: 0.6 }}
-              className="mb-8"
-            >
-              <div className="flex items-center gap-2">
-                <span className="text-secondary font-mono text-sm">root@kshitij:~$</span>
-                <span className="font-mono text-sm text-primary text-glow-green">
-                  {displayText}<span className="cursor-blink">█</span>
-                </span>
-              </div>
-            </motion.div>
-
-            {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.3, duration: 0.6 }}
-              className="flex flex-wrap gap-3"
-            >
-              <button
-                className="hack-btn px-6 py-2.5 text-xs"
-                onClick={() => scrollToSection("projects")}
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  <Shield className="h-3.5 w-3.5" />
-                  ./view_projects.sh
-                </span>
-              </button>
-              <button
-                className="hack-btn hack-btn-red px-6 py-2.5 text-xs"
-                onClick={() => scrollToSection("contact")}
-              >
-                <span className="relative z-10">./init_contact.sh</span>
-              </button>
-            </motion.div>
+          <div className="relative group">
+            <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary via-accent to-secondary opacity-40 blur-md group-hover:opacity-70 transition-opacity duration-500" />
+            <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-primary/30">
+              <img
+                src="/lovable-uploads/6d8fbab6-df0e-4104-8cff-c8c1ff08a385.png"
+                alt="Kshitij Gupta - Cybersecurity Professional"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </motion.div>
 
-        {/* Scroll indicator */}
+        {/* Terminal Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="flex items-center justify-center mb-8"
+        >
+          <Terminal className="text-primary mr-3 h-6 w-6" />
+          <span className="font-mono text-primary text-base opacity-80">kshitij@cyberspace:~$</span>
+        </motion.div>
+
+        {/* Main Heading */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
+          className="font-cyber text-5xl sm:text-6xl md:text-8xl font-bold mb-6 glow-text tracking-tight"
+        >
+          KSHITIJ GUPTA
+        </motion.h1>
+
+        {/* Tagline */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          className="text-lg md:text-xl text-muted-foreground font-mono mb-4"
+        >
+          Aspiring Security Analyst | Cybersecurity Enthusiast
+        </motion.p>
+
+        {/* Subtext */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.6 }}
+          className="text-base md:text-lg text-foreground/80 mb-8 max-w-2xl mx-auto"
+        >
+          Exploring how systems break — and how to defend them better.
+        </motion.p>
+
+        {/* Typewriter Effect */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.6 }}
+          className="h-16 flex items-center justify-center mb-12"
+        >
+          <div className="flex items-center glass-card px-6 py-3">
+            <Shield className="text-secondary mr-3 h-5 w-5" />
+            <span className="font-mono text-xl md:text-2xl text-secondary glow-text-secondary">
+              {displayText}
+              <span className="animate-pulse">|</span>
+            </span>
+          </div>
+        </motion.div>
+
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.4, duration: 0.6 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+        >
+          <Button
+            className="cyber-button px-8 py-4 text-lg font-mono"
+            onClick={() => scrollToSection("projects")}
+          >
+            View My Work
+          </Button>
+          <Button
+            variant="outline"
+            className="cyber-button px-8 py-4 text-lg font-mono border-secondary text-secondary hover:text-secondary"
+            onClick={() => scrollToSection("about")}
+          >
+            <span className="flex items-center gap-2">
+              Start Scanning <ArrowRight className="h-5 w-5" />
+            </span>
+          </Button>
+        </motion.div>
+
+        {/* Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 0.6 }}
-          className="flex justify-center mt-10"
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
         >
           <div className="animate-bounce">
-            <ArrowDown className="text-primary/40 h-5 w-5" />
+            <ArrowDown className="text-primary/60 h-6 w-6" />
           </div>
         </motion.div>
       </div>
