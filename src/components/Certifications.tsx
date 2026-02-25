@@ -68,7 +68,7 @@ export const Certifications = () => {
         <div className="mt-16 grid md:grid-cols-3 gap-6">
           {[
             { value: "4", label: "Certifications Earned", color: "text-primary" },
-            { value: "2025", label: "Active Learning Year", color: "text-secondary" },
+            { value: "2026", label: "Active Learning Year", color: "text-secondary" },
             { value: "∞", label: "Continuous Learning", color: "text-accent" },
           ].map((stat, i) => (
             <AnimatedSection key={i} delay={0.5 + i * 0.1}>
