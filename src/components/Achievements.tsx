@@ -3,33 +3,37 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 
 export const Achievements = () => {
   const achievements = [
-    { icon: Trophy, color: "text-primary", glowColor: "shadow-primary/20", title: "6th Position – Quick Heal Hack & Defend X CTF", description: "Achieved 6th rank in a 24-hour cybersecurity challenge conducted by LPU in collaboration with Quick Heal & CompTIA." },
-    { icon: Medal, color: "text-secondary", glowColor: "shadow-secondary/20", title: "5th Place – ENCRYPTED CTF (CYPHER x Thunder Cipher)", description: "Ranked 5th globally as part of Sh4d0w_br0k3rs, scoring 1150 points across OSINT, Forensics, Crypto, Web Exploitation & Steganography." },
-    { icon: Medal, color: "text-accent", glowColor: "shadow-accent/20", title: "5th Place – Digital CyberHunt CTF (IILM University, Noida)", description: "Achieved 2250 points, tied with 1st–8th ranked teams, across OSINT, Forensics, Cryptography, Web Exploitation, and Steganography." },
-    { icon: Megaphone, color: "text-primary", glowColor: "shadow-primary/20", title: "Campus Ambassador – ThunderCipher (2026–Present)", description: "Promoting Cybersecurity Awareness and CTF Participation on Campus. Connected students with ThunderCipher challenges and learning resources. Organized TRIVARNA CTF, coordinating participation and outreach." },
+    { icon: Trophy, color: "text-primary", title: "6th Position — Quick Heal Hack & Defend X CTF", description: "24-hour cybersecurity challenge by LPU x Quick Heal x CompTIA." },
+    { icon: Medal, color: "text-secondary", title: "5th Place — ENCRYPTED CTF (CYPHER x Thunder Cipher)", description: "1150 pts as Sh4d0w_br0k3rs across OSINT, Forensics, Crypto, Web Exploitation & Stego." },
+    { icon: Medal, color: "text-accent", title: "5th Place — Digital CyberHunt CTF (IILM University)", description: "2250 pts, tied with top 8 teams. OSINT, Forensics, Cryptography, Web Exploitation, Stego." },
+    { icon: Megaphone, color: "text-primary", title: "Campus Ambassador — ThunderCipher (2026–Present)", description: "Promoting CTF participation. Organized TRIVARNA CTF, coordinated outreach & participation." },
   ];
 
   return (
-    <section id="achievements" className="py-24 px-4 gradient-mesh">
-      <div className="max-w-6xl mx-auto">
+    <section id="achievements" className="py-24 px-4 matrix-gradient">
+      <div className="max-w-5xl mx-auto">
         <AnimatedSection>
-          <div className="text-center mb-16">
-            <h2 className="section-header text-4xl md:text-5xl font-cyber font-bold mb-6">Achievements</h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+          <div className="mb-16">
+            <p className="font-mono text-[10px] text-muted-foreground mb-2">
+              <span className="text-secondary">$</span> cat /var/log/achievements.log
+            </p>
+            <h2 className="section-header text-3xl md:text-4xl font-terminal mb-4">ACHIEVEMENTS</h2>
+            <div className="w-24 h-px bg-primary/30"></div>
           </div>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="space-y-3">
           {achievements.map((item, index) => (
             <AnimatedSection key={index} delay={index * 0.1}>
-              <div className={`glass-card p-6 h-full flex items-start gap-4 hover:${item.glowColor}`}>
-                <div className={`p-3 rounded-xl bg-background/50 border border-current/10 ${item.color}`}>
-                  <item.icon className="h-6 w-6" />
+              <div className="terminal-card p-5 flex items-start gap-4">
+                <div className={`${item.color} mt-0.5 flex-shrink-0`}>
+                  <item.icon className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className={`font-cyber text-base font-bold ${item.color} mb-2`}>{item.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed text-sm">{item.description}</p>
+                  <h3 className={`font-terminal text-base ${item.color} mb-1`}>{item.title}</h3>
+                  <p className="text-muted-foreground font-mono text-[11px] leading-relaxed">{item.description}</p>
                 </div>
+                <span className="text-muted-foreground/30 font-mono text-[10px] flex-shrink-0 mt-1">#{String(index + 1).padStart(2, '0')}</span>
               </div>
             </AnimatedSection>
           ))}

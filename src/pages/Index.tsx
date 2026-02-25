@@ -13,17 +13,9 @@ import { ParticleBackground } from "@/components/ParticleBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground font-body">
-      {/* Particle Background */}
+    <div className="min-h-screen bg-background text-foreground font-body scanlines noise-bg crt-flicker">
       <ParticleBackground />
-      
-      {/* Subtle Grid Overlay */}
-      <div className="fixed inset-0 cyber-grid pointer-events-none z-0 opacity-30" />
-
-      {/* Navigation */}
       <Navbar />
-
-      {/* Main Content */}
       <div className="relative z-10">
         <Hero />
         <About />
