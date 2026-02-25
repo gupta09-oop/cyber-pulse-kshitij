@@ -8,7 +8,7 @@ export const Certifications = () => {
   const certifications = [
     { title: "StackSmash CTF Playground", issuer: "HackTheBox", date: "Jul 2025", credential: "Team: thexploiters0909", type: "CTF Competition", color: "text-accent", image: "/lovable-uploads/stacksmash-ctf-certificate.jpg" },
     { title: "Career Essentials in Cybersecurity", issuer: "Microsoft & LinkedIn", date: "Apr 09, 2025", credential: "2f6ed1dbfa510b5d75b6ea1514d20d407e70c335c8b346290b5f18791dbc8514", type: "Professional", color: "text-primary", image: "/lovable-uploads/464dfb19-fc57-42ab-bdb4-9d5762e4988b.png" },
-    { title: "TryHackMe Advent of Cyber 2024", issuer: "TryHackMe", date: "Jul 25, 2025", credential: "THM-AW3FPS5EPC", type: "Achievement", color: "text-accent", image: "/lovable-uploads/939e9026-d747-407f-af32-55807e9beb61.png" },
+    { title: "Pre Security Learning Path", issuer: "TryHackMe", date: "Feb 20, 2026", credential: "", type: "Learning Path", color: "text-accent", image: "/lovable-uploads/pre-security-tryhackme.jpg" },
     { title: "Introduction to OSINT", issuer: "Security Blue Team", date: "May 14, 2025", credential: "727299518", type: "Professional", color: "text-primary", image: "/lovable-uploads/56933fda-ad55-41ef-b520-ee8ede7a3968.png" },
   ];
 
