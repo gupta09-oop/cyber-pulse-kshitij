@@ -1,15 +1,21 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Terminal, Shield, ArrowRight } from "lucide-react";
+import { ArrowDown, Terminal, Shield, Download, Github, Linkedin, Youtube, BookOpen } from "lucide-react";
 
 const typewriterPhrases = [
-  "Phishing Hunter",
-  "CTF Solver",
-  "AI Defender",
-  "Fast Learner",
-  "Security Builder",
-  "Threat Analyst",
+  "CTF Challenge Developer",
+  "Web Security",
+  "Wi-Fi Security Research",
+  "Vulnerability Assessment",
+  "Technical Write-ups",
+];
+
+const socials = [
+  { icon: Github, label: "GitHub", href: "https://github.com/gupta09-oop" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/kshitijgupta1806" },
+  { icon: BookOpen, label: "Medium", href: "https://medium.com/@guptakshitij4723" },
+  { icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@Exploiter404" },
 ];
 
 export const Hero = () => {
@@ -41,7 +47,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative px-4 pt-16">
+    <section className="min-h-screen flex items-center justify-center relative px-4 pt-24 pb-20">
       <div className="text-center max-w-4xl mx-auto">
         {/* Profile Image */}
         <motion.div
@@ -55,7 +61,7 @@ export const Hero = () => {
             <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-primary/30">
               <img
                 src="/lovable-uploads/6d8fbab6-df0e-4104-8cff-c8c1ff08a385.png"
-                alt="Kshitij Gupta - Cybersecurity Professional"
+                alt="Kshitij Gupta - Cybersecurity and CTF Challenge Developer"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -69,8 +75,8 @@ export const Hero = () => {
           transition={{ delay: 0.3, duration: 0.6 }}
           className="flex items-center justify-center mb-8"
         >
-          <Terminal className="text-primary mr-3 h-6 w-6" />
-          <span className="font-mono text-primary text-base opacity-80">kshitij@cyberspace:~$</span>
+          <Terminal className="text-primary mr-3 h-5 w-5" />
+          <span className="font-mono text-primary text-sm opacity-80">kshitij@cyberspace:~$</span>
         </motion.div>
 
         {/* Main Heading */}
@@ -78,7 +84,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-          className="font-cyber text-5xl sm:text-6xl md:text-8xl font-bold mb-6 glow-text tracking-tight"
+          className="font-cyber text-4xl sm:text-6xl md:text-7xl font-bold mb-6 glow-text tracking-tight"
         >
           KSHITIJ GUPTA
         </motion.h1>
@@ -90,7 +96,7 @@ export const Hero = () => {
           transition={{ delay: 0.8, duration: 0.6 }}
           className="text-lg md:text-xl text-muted-foreground font-mono mb-4"
         >
-          Aspiring Security Analyst | Cybersecurity Enthusiast
+          Cybersecurity | CTF Challenge Developer
         </motion.p>
 
         {/* Subtext */}
@@ -98,9 +104,10 @@ export const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.6 }}
-          className="text-base md:text-lg text-foreground/80 mb-8 max-w-2xl mx-auto"
+          className="text-base md:text-lg text-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed"
         >
-          Exploring how systems break — and how to defend them better.
+          Building security challenges, researching vulnerabilities, and creating hands-on
+          cybersecurity experiences.
         </motion.p>
 
         {/* Typewriter Effect */}
@@ -108,11 +115,11 @@ export const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.6 }}
-          className="h-16 flex items-center justify-center mb-12"
+          className="h-16 flex items-center justify-center mb-10"
         >
-          <div className="flex items-center glass-card px-6 py-3">
-            <Shield className="text-secondary mr-3 h-5 w-5" />
-            <span className="font-mono text-xl md:text-2xl text-secondary glow-text-secondary">
+          <div className="flex items-center glass-card px-5 py-3">
+            <Shield className="text-secondary mr-3 h-5 w-5 flex-shrink-0" />
+            <span className="font-mono text-base md:text-xl text-secondary glow-text-secondary">
               {displayText}
               <span className="animate-pulse">|</span>
             </span>
@@ -127,20 +134,41 @@ export const Hero = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <Button
-            className="cyber-button px-8 py-4 text-lg font-mono"
+            className="cyber-button w-full sm:w-auto px-8 py-4 text-base font-mono"
             onClick={() => scrollToSection("projects")}
           >
             View My Work
           </Button>
           <Button
             variant="outline"
-            className="cyber-button px-8 py-4 text-lg font-mono border-secondary text-secondary hover:text-secondary"
-            onClick={() => scrollToSection("about")}
+            className="cyber-button w-full sm:w-auto px-8 py-4 text-base font-mono border-secondary text-secondary hover:text-secondary"
+            asChild
           >
-            <span className="flex items-center gap-2">
-              Start Scanning <ArrowRight className="h-5 w-5" />
-            </span>
+            <a href="/lovable-uploads/fc68869f-79ce-4984-a28e-28b7145095da.png" download="Kshitij_Gupta_Resume.png">
+              <Download className="mr-2 h-5 w-5" /> Download Resume
+            </a>
           </Button>
+        </motion.div>
+
+        {/* Socials */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.6, duration: 0.6 }}
+          className="flex justify-center gap-3 mt-8"
+        >
+          {socials.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={s.label}
+              className="glass-card p-3 rounded-xl text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
+            >
+              <s.icon className="h-5 w-5" />
+            </a>
+          ))}
         </motion.div>
 
         {/* Scroll Indicator */}
@@ -148,7 +176,7 @@ export const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 0.6 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+          className="hidden md:block absolute bottom-6 left-1/2 transform -translate-x-1/2"
         >
           <div className="animate-bounce">
             <ArrowDown className="text-primary/60 h-6 w-6" />
