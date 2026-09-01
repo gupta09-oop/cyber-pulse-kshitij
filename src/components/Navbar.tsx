@@ -5,11 +5,12 @@ import { Terminal, Menu, X } from "lucide-react";
 const navLinks = [
   { label: "About", href: "about" },
   { label: "Skills", href: "skills" },
-  { label: "Projects", href: "projects" },
-  { label: "Blog", href: "blog" },
-  { label: "Certs", href: "certifications" },
-  { label: "Achievements", href: "achievements" },
   { label: "Experience", href: "experience" },
+  { label: "Projects", href: "projects" },
+  { label: "CTF Development", href: "ctf-development" },
+  { label: "Achievements", href: "achievements" },
+  { label: "Certifications", href: "certifications" },
+  { label: "Blog", href: "blog" },
   { label: "Contact", href: "contact" },
 ];
 
@@ -54,24 +55,18 @@ export const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-2 group">
             <Terminal className="h-5 w-5 text-primary group-hover:text-secondary transition-colors" />
-            <span className="font-cyber text-sm font-bold text-primary group-hover:glow-text transition-all">
-              KG
-            </span>
+            <span className="font-cyber text-sm font-bold text-primary group-hover:glow-text transition-all">KG</span>
           </button>
 
-          {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-0.5">
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
-                className={`relative px-3 py-2 text-sm font-mono transition-colors duration-300 rounded-lg ${
-                  active === link.href
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
+                className={`relative px-2.5 py-2 text-xs font-mono transition-colors duration-300 rounded-lg ${
+                  active === link.href ? "text-primary" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {active === link.href && (
@@ -86,24 +81,19 @@ export const Navbar = () => {
             ))}
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden text-primary"
-          >
+          <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden text-primary" aria-label="Toggle menu">
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background/90 backdrop-blur-xl border-b border-primary/10"
+            className="lg:hidden bg-background/90 backdrop-blur-xl border-b border-primary/10 overflow-hidden"
           >
             <div className="px-4 py-4 space-y-1">
               {navLinks.map((link) => (

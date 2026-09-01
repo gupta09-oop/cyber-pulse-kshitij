@@ -1,24 +1,13 @@
-import { useState, useEffect } from "react";
-import { Terminal, Clock, Activity } from "lucide-react";
+import { Terminal, Github, Linkedin, BookOpen, Youtube } from "lucide-react";
+
+const links = [
+  { icon: Github, label: "GitHub", href: "https://github.com/gupta09-oop" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/kshitijgupta1806" },
+  { icon: BookOpen, label: "Medium", href: "https://medium.com/@guptakshitij4723" },
+  { icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@Exploiter404" },
+];
 
 export const Footer = () => {
-  const [uptime, setUptime] = useState("00:00:00");
-  const [lastScan, setLastScan] = useState("");
-
-  useEffect(() => {
-    const startTime = Date.now();
-    setLastScan(new Date().toLocaleString());
-    const updateUptime = () => {
-      const diff = Date.now() - startTime;
-      const h = Math.floor(diff / 3600000);
-      const m = Math.floor((diff % 3600000) / 60000);
-      const s = Math.floor((diff % 60000) / 1000);
-      setUptime(`${h.toString().padStart(2, "0")}:${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`);
-    };
-    const interval = setInterval(updateUptime, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <footer className="py-10 px-4 border-t border-primary/10 bg-background/50 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto">
@@ -27,37 +16,28 @@ export const Footer = () => {
             <Terminal className="text-primary mr-3 h-5 w-5" />
             <div>
               <div className="font-cyber text-lg font-bold text-primary">Kshitij Gupta</div>
-              <div className="font-mono text-xs text-muted-foreground">Cybersecurity Portfolio v2.0</div>
+              <div className="font-mono text-xs text-muted-foreground">Cybersecurity | CTF Challenge Developer</div>
             </div>
           </div>
 
-          <div className="flex gap-8">
-            <div className="text-center">
-              <div className="flex items-center mb-1 gap-1.5">
-                <Activity className="text-secondary h-3.5 w-3.5" />
-                <span className="font-mono text-xs text-secondary">Uptime</span>
-              </div>
-              <div className="font-cyber text-base font-bold text-secondary">{uptime}</div>
-            </div>
-            <div className="text-center">
-              <div className="flex items-center mb-1 gap-1.5">
-                <Clock className="text-accent h-3.5 w-3.5" />
-                <span className="font-mono text-xs text-accent">Last Scan</span>
-              </div>
-              <div className="font-mono text-xs text-accent">{lastScan}</div>
-            </div>
+          <div className="flex items-center gap-3">
+            {links.map((l) => (
+              <a
+                key={l.label}
+                href={l.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={l.label}
+                className="p-2.5 rounded-lg glass-card text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors"
+              >
+                <l.icon className="h-5 w-5" />
+              </a>
+            ))}
           </div>
 
-          <div className="text-center md:text-right">
-            <div className="font-mono text-xs text-muted-foreground">
-              © 2025 Kshitij Gupta. All systems operational.
-            </div>
+          <div className="font-mono text-xs text-muted-foreground text-center md:text-right">
+            © 2026 Kshitij Gupta. All rights reserved.
           </div>
-        </div>
-
-        <div className="mt-6 relative overflow-hidden">
-          <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
-          <div className="absolute top-0 left-0 h-px w-20 bg-primary animate-scan opacity-50"></div>
         </div>
       </div>
     </footer>
