@@ -1,1 +1,1 @@
-- [ ] Add uploaded CompTIA Network+ certificate and badge to its certification card
+- [x] Add uploaded CompTIA Network+ certificate and badge to its certification card
