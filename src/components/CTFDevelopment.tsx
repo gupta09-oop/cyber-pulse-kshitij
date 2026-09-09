@@ -1,30 +1,26 @@
-import { Flag, Globe, Search, KeyRound, Network, Fingerprint } from "lucide-react";
+import { Flag, CheckCircle, FileText, Headphones, Lightbulb } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
-
-const categories = [
-  { icon: Globe, label: "Web Security", color: "text-primary" },
-  { icon: Fingerprint, label: "Forensics", color: "text-secondary" },
-  { icon: KeyRound, label: "Cryptography", color: "text-accent" },
-  { icon: Search, label: "OSINT", color: "text-primary" },
-  { icon: Network, label: "Networking", color: "text-secondary" },
-];
 
 const workflow = [
   {
+    icon: Lightbulb,
     title: "Challenge Design",
-    desc: "Define the vulnerability, learning objective and intended solution path before writing a single line of code.",
+    desc: "Designing original cybersecurity challenges across Web Security, Forensics, Cryptography, OSINT, and Networking.",
   },
   {
-    title: "Build & Deploy",
-    desc: "Implement the challenge environment, embed the flag logic and package it for reliable deployment.",
+    icon: CheckCircle,
+    title: "Challenge Validation",
+    desc: "Testing intended solve paths, validating challenge environments, and ensuring challenges are technically solvable.",
   },
   {
-    title: "Testing & Balancing",
-    desc: "Validate solvability, remove unintended solutions and tune difficulty so the challenge stays fair.",
+    icon: FileText,
+    title: "Technical Documentation",
+    desc: "Creating challenge documentation, solution paths, hints, and write-ups.",
   },
   {
-    title: "Documentation",
-    desc: "Write clear descriptions, hints and structured solution write-ups for participants and organisers.",
+    icon: Headphones,
+    title: "Event Support",
+    desc: "Supporting CTF platforms, troubleshooting participant issues, and guiding participants during events.",
   },
 ];
 
@@ -39,27 +35,7 @@ export const CTFDevelopment = () => {
             </div>
             <h2 className="section-header text-4xl md:text-5xl font-cyber font-bold mb-6">CTF Development</h2>
             <div className="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
-            <p className="text-muted-foreground max-w-2xl mx-auto mt-6 leading-relaxed">
-              I design, build and test Capture The Flag challenges — turning real vulnerability classes
-              into hands-on learning experiences for competitive security events.
-            </p>
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection delay={0.1}>
-          <div className="glass-card p-6 md:p-8 mb-8">
-            <div className="flex items-center mb-6">
-              <Flag className="text-primary mr-3 h-6 w-6" />
-              <h3 className="font-cyber text-xl font-bold text-primary">Challenge Categories</h3>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-              {categories.map((c) => (
-                <div key={c.label} className="glass-card p-5 text-center">
-                  <c.icon className={`${c.color} h-6 w-6 mx-auto mb-3`} />
-                  <div className="font-mono text-xs md:text-sm text-foreground/90">{c.label}</div>
-                </div>
-              ))}
-            </div>
+            <p className="text-muted-foreground max-w-2xl mx-auto mt-6 leading-relaxed">Designing, validating, documenting, and supporting hands-on cybersecurity challenges.</p>
           </div>
         </AnimatedSection>
 
@@ -67,31 +43,17 @@ export const CTFDevelopment = () => {
           {workflow.map((w, i) => (
             <AnimatedSection key={w.title} delay={0.2 + i * 0.1}>
               <div className="glass-card p-6 h-full">
-                <div className="font-mono text-xs text-secondary mb-2">{String(i + 1).padStart(2, "0")}</div>
-                <h4 className="font-cyber text-base font-bold text-foreground mb-2">{w.title}</h4>
+                <div className="flex items-center gap-3 mb-3">
+                  <w.icon className="h-5 w-5 text-primary" />
+                  <div className="font-mono text-xs text-secondary">{String(i + 1).padStart(2, "0")}</div>
+                </div>
+                <h3 className="font-cyber text-base font-bold text-foreground mb-2">{w.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{w.desc}</p>
               </div>
             </AnimatedSection>
           ))}
         </div>
 
-        <AnimatedSection delay={0.6}>
-          <div className="glass-card p-6 md:p-8 mt-8">
-            <h3 className="font-cyber text-xl font-bold text-secondary mb-4">Events I've Contributed To</h3>
-            <ul className="space-y-3">
-              {[
-                "UNI6CTF — Challenge Developer (2026)",
-                "LPU x Play 2 Unite CTF — Event Contributor (2026)",
-                "TRIVARNA CTF — Outreach & Coordination",
-              ].map((e) => (
-                <li key={e} className="flex items-center text-muted-foreground">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary mr-3 flex-shrink-0" />
-                  <span className="font-mono text-sm">{e}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </AnimatedSection>
       </div>
     </section>
   );
