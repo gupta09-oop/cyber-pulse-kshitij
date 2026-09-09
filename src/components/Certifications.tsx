@@ -28,7 +28,15 @@ const additionalLearning = [
   { title: "Pre Security Learning Path", issuer: "TryHackMe", date: "Feb 2026", type: "Learning Path", color: "text-secondary", image: "/lovable-uploads/pre-security-tryhackme.jpg", certificateUrl: null },
 ];
 
-type Cert = (typeof certifications)[number];
+type Cert = {
+  title: string;
+  issuer: string;
+  date: string;
+  type: string;
+  color: string;
+  image: string | null;
+  certificateUrl: string | null;
+};
 
 const CertCard = ({ cert }: { cert: Cert }) => (
   <div className="glass-card p-6 h-full flex flex-col">

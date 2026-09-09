@@ -35,6 +35,13 @@ export const Skills = () => {
     },
   ];
 
+  const stats = [
+    { value: "4+", label: "CTF Competition Placements", color: "text-primary" },
+    { value: "5+", label: "Cybersecurity Certifications", color: "text-secondary" },
+    { value: "2+", label: "Security Projects", color: "text-accent" },
+    { value: "YouTube + Medium", label: "Technical Content", color: "text-primary" },
+  ];
+
   return (
     <section id="skills" className="py-24 px-4 gradient-mesh">
       <div className="max-w-6xl mx-auto">
@@ -58,6 +65,18 @@ export const Skills = () => {
                     <span key={skill} className="skill-tag">{skill}</span>
                   ))}
                 </div>
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+          {stats.map((stat, index) => (
+            <AnimatedSection key={stat.label} delay={0.35 + index * 0.08}>
+              <div className="terminal-border bg-background/30 p-5 h-full">
+                <div className="font-mono text-xs text-muted-foreground mb-3">kshitij@stats:~$</div>
+                <div className={`font-cyber text-xl font-bold ${stat.color} mb-1`}>{stat.value}</div>
+                <div className="text-sm text-muted-foreground">{stat.label}</div>
               </div>
             </AnimatedSection>
           ))}
