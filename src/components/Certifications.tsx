@@ -5,6 +5,7 @@ import { Award, Calendar, ChevronDown, Eye } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import comptiaCertificate from "@/assets/comptia-network-plus-certificate.pdf.asset.json";
 import comptiaBadge from "@/assets/comptia-network-plus-badge.jpg.asset.json";
+import networkSecurityCertificate from "@/assets/network-security-ethical-hacking-certificate.pdf.asset.json";
 
 const certifications = [
   {
@@ -16,7 +17,7 @@ const certifications = [
     image: comptiaBadge.url,
     certificateUrl: comptiaCertificate.url,
   },
-  { title: "Network Security & Ethical Hacking Essentials — Certificate of Merit", issuer: "LPU Centre for Professional Enhancement", date: "August 2026", type: "Certificate of Merit", color: "text-secondary", image: null, certificateUrl: null },
+  { title: "Network Security & Ethical Hacking Essentials — Certificate of Merit", issuer: "LPU Centre for Professional Enhancement", date: "August 13, 2026", type: "Certificate of Merit", color: "text-secondary", image: null, certificateUrl: networkSecurityCertificate.url },
   { title: "Certified VAPT Practitioner", issuer: "ThunderCipher", date: "April 2026", type: "Professional", color: "text-accent", image: null, certificateUrl: null },
   { title: "Junior Web Application Pentester", issuer: "Sturtle Security", date: "March 2026", type: "Professional", color: "text-primary", image: null, certificateUrl: null },
   { title: "Introduction to OSINT", issuer: "Security Blue Team", date: "April 2025", type: "Professional", color: "text-secondary", image: "/lovable-uploads/56933fda-ad55-41ef-b520-ee8ede7a3968.png", certificateUrl: null },
@@ -57,7 +58,7 @@ const CertCard = ({ cert }: { cert: Cert }) => (
         className="w-28 h-28 object-contain mx-auto my-3 rounded-lg"
       />
     )}
-    {cert.image && (
+    {(cert.image || cert.certificateUrl) && (
       <Dialog>
         <DialogTrigger asChild>
           <button className="w-full mt-auto flex items-center justify-center gap-2 px-4 py-2.5 glass-card hover:border-primary/40 transition-colors font-mono text-sm">
