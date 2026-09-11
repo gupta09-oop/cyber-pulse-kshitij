@@ -17,7 +17,7 @@ const certifications = [
     image: comptiaBadge.url,
     certificateUrl: comptiaCertificate.url,
   },
-  { title: "Network Security & Ethical Hacking Essentials — Certificate of Merit", issuer: "LPU Centre for Professional Enhancement", date: "August 2026", type: "Certificate of Merit", color: "text-secondary", image: null, certificateUrl: null },
+  { title: "Network Security & Ethical Hacking Essentials — Certificate of Merit", issuer: "LPU Centre for Professional Enhancement", date: "August 13, 2026", type: "Certificate of Merit", color: "text-secondary", image: null, certificateUrl: networkSecurityCertificate.url },
   { title: "Certified VAPT Practitioner", issuer: "ThunderCipher", date: "April 2026", type: "Professional", color: "text-accent", image: null, certificateUrl: null },
   { title: "Junior Web Application Pentester", issuer: "Sturtle Security", date: "March 2026", type: "Professional", color: "text-primary", image: null, certificateUrl: null },
   { title: "Introduction to OSINT", issuer: "Security Blue Team", date: "April 2025", type: "Professional", color: "text-secondary", image: "/lovable-uploads/56933fda-ad55-41ef-b520-ee8ede7a3968.png", certificateUrl: null },
