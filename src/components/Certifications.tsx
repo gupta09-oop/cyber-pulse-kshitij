@@ -5,6 +5,7 @@ import { Award, Calendar, ChevronDown, Eye } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import comptiaCertificate from "@/assets/comptia-network-plus-certificate.pdf.asset.json";
 import comptiaBadge from "@/assets/comptia-network-plus-badge.jpg.asset.json";
+import networkSecurityCertificate from "@/assets/network-security-ethical-hacking-certificate.pdf.asset.json";
 
 const certifications = [
   {
