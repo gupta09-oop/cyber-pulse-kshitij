@@ -58,7 +58,7 @@ const CertCard = ({ cert }: { cert: Cert }) => (
         className="w-28 h-28 object-contain mx-auto my-3 rounded-lg"
       />
     )}
-    {cert.image && (
+    {(cert.image || cert.certificateUrl) && (
       <Dialog>
         <DialogTrigger asChild>
           <button className="w-full mt-auto flex items-center justify-center gap-2 px-4 py-2.5 glass-card hover:border-primary/40 transition-colors font-mono text-sm">
